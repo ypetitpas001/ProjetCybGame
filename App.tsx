@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 1,
     backgroundColor: "white",
+
   },
 
   titre: {
@@ -95,14 +96,15 @@ const styles = StyleSheet.create({
     marginTop: 25,
     color: '#fff',
     fontSize: 14,
+    alignSelf: "center",
   },
   texte1: {
-    marginTop: 15,
+    marginTop: 25,
     color: '#fff',
     fontSize: 14,
   },
   texte2: {
-    marginTop: 25,
+    marginTop: 35,
     color: '#fff',
     fontSize: 14,
   },
@@ -114,18 +116,11 @@ const styles = StyleSheet.create({
   },
 
   continuer: {
-    marginTop: 45,
+    marginTop: 55,
     color: '#fff',
     fontSize: 14,
   },
 
-  bouton: {
-    marginTop: 35,
-    height: 45,
-    marginBottom: 20,
-    width: 250,
-    borderRadius: 30,
-  },
   astronaute: {
     marginTop: 55,
     height: 120,
