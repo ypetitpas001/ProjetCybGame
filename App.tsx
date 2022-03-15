@@ -4,14 +4,22 @@ import React from 'react';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.titre}>CybGame</Text>
-      <View style={styles.barre} />
-      <Text style={styles.accueil}>Bienvenue à bord du vaisseau JF-8801</Text>
-      <Text style={styles.texte1}>Nous sommes en mission pour aller pour la première fois sur la planète
-        Mars, mais le vaisseau semble ne plus fonctionner correctement.</Text>
-      <Text style={styles.texte2}>Tu as été mandaté pour enquêter sur ce qui se passe et éviter l'accident !</Text>
-      <Text style={styles.texte3}>Tout au long de la mission tu seras accompagné de CybCog qui pourra t'aider
-        en cas de besoin</Text>
+      <View>
+        <Text style={styles.titre}>CybGame</Text>
+      </View>
+
+      <View>
+        <View style={styles.barre} />
+      </View>
+
+      <View>
+        <Text style={styles.accueil}>Bienvenue à bord du vaisseau JF-8801</Text>
+        <Text style={styles.texte1}>Nous sommes en mission pour aller pour la première fois sur la planète
+          Mars, mais le vaisseau semble ne plus fonctionner correctement.</Text>
+        <Text style={styles.texte2}>Tu as été mandaté pour enquêter sur ce qui se passe et éviter l'accident !</Text>
+        <Text style={styles.texte3}>Tout au long de la mission tu seras accompagné de CybCog qui pourra t'aider
+          en cas de besoin</Text>
+      </View>
 
 
       <TouchableOpacity>
@@ -70,59 +78,59 @@ const styles = StyleSheet.create({
   },
 
   barre: {
-    display: 'flex',
-    position: 'absolute', top: '18%',
+    marginTop: 25,
     width: 300,
     height: 1,
     backgroundColor: "white",
   },
 
   titre: {
-    position: 'absolute', top: '5%',
+    marginTop: 45,
     color: '#fff',
     fontSize: 32,
   },
 
 
   accueil: {
-    position: 'absolute', top: '20%',
+    marginTop: 25,
     color: '#fff',
     fontSize: 14,
   },
   texte1: {
-    position: 'absolute', top: '30%',
+    marginTop: 15,
     color: '#fff',
     fontSize: 14,
   },
   texte2: {
-    position: 'absolute', top: '40%',
+    marginTop: 25,
     color: '#fff',
     fontSize: 14,
   },
 
   texte3: {
-    position: 'absolute', top: '50%',
+    marginTop: 25,
     color: '#fff',
     fontSize: 14,
   },
 
   continuer: {
-    position: 'absolute', top: '70%',
+    marginTop: 45,
     color: '#fff',
     fontSize: 14,
   },
 
   bouton: {
+    marginTop: 35,
     height: 45,
     marginBottom: 20,
     width: 250,
     borderRadius: 30,
   },
   astronaute: {
+    marginTop: 55,
     height: 120,
     width: 82,
     paddingHorizontal: 8,
     alignSelf: "flex-start",
-    top: '80%',
   }
 });
