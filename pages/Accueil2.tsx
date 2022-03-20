@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert, TouchableOpacityComponent } from 'react-native';
 import React from 'react';
 
 export default function App() {
 
-    const accueilSuiv = () => Alert.alert("Accueilsuiv")
+
 
 
     return (
@@ -17,18 +17,15 @@ export default function App() {
             </View>
 
             <View>
-                <Text style={styles.accueil}>Bienvenue à bord du vaisseau JF-8801</Text>
-                <Text style={styles.texte1}>Nous sommes en mission pour aller pour la première fois sur la planète
-                    Mars, mais le vaisseau semble ne plus fonctionner correctement.</Text>
-                <Text style={styles.texte2}>Tu as été mandaté pour enquêter sur ce qui se passe et éviter l'accident !</Text>
-                <Text style={styles.texte3}>Tout au long de la mission tu seras accompagné de CybCog qui pourra t'aider
-                    en cas de besoin</Text>
+                <Text style={styles.texte1}>Maintenant que tu connais le contexte, il s'agit de passer à l'action !</Text>
+                <Text style={styles.texte2}>Tu vas devoir recueillir des informations importantes pour débloquer la situation</Text>
+                <Text style={styles.texte3}>Tu auras accès au tableau de bord du vaisseau. Une console sera également à ta disposition lorsque tu devras entrer des lignes de commandes.
+                    N'hésite pas à me solliciter si tu as besoin d'aide !</Text>
             </View>
 
 
-            <TouchableOpacity
-                onPress={accueilSuiv}>
-                <Text style={styles.continuer}>Clique pour continuer</Text>
+            <TouchableOpacity>
+                <Text style={styles.continuer}>C'est parti !</Text>
             </TouchableOpacity>
 
             <Image
@@ -58,14 +55,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         color: '#fff',
         fontSize: 32,
-    },
-
-
-    accueil: {
-        marginTop: 25,
-        color: '#fff',
-        fontSize: 14,
-        alignSelf: "center",
     },
     texte1: {
         marginTop: 25,
