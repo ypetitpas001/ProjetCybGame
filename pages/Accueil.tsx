@@ -1,9 +1,12 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert } from 'react-native';
 import React from 'react';
+import AppNavigator from './appNavigator';
 
-export default function App() {
+interface AccueilProps {
+    navigation: any;
+}
 
-    const accueilSuiv = () => Alert.alert("Accueilsuiv")
+export default function Accueil(props: AccueilProps) {
 
 
     return (
@@ -16,7 +19,7 @@ export default function App() {
                 <View style={styles.barre} />
             </View>
 
-            <View>
+            <View style={{ marginLeft: 5, marginRight: 5, }}>
                 <Text style={styles.accueil}>Bienvenue à bord du vaisseau JF-8801</Text>
                 <Text style={styles.texte1}>Nous sommes en mission pour aller pour la première fois sur la planète
                     Mars, mais le vaisseau semble ne plus fonctionner correctement.</Text>
@@ -27,7 +30,7 @@ export default function App() {
 
 
             <TouchableOpacity
-                onPress={accueilSuiv}>
+                onPress={() => props.navigation.navigate('Accueil2')}>
                 <Text style={styles.continuer}>Clique pour continuer</Text>
             </TouchableOpacity>
 

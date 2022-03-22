@@ -1,9 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert, TouchableOpacityComponent } from 'react-native';
 import React from 'react';
 
-export default function App() {
-
-
+export default function Accueil2() {
 
 
     return (

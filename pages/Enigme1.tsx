@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert, TextInput } from 'react-native';
 import React from 'react';
 
-export default function App() {
+export default function Enigme1() {
 
 
     return (
@@ -39,7 +39,7 @@ export default function App() {
 
             <Image
                 style={styles.astronaute}
-                source={require("./assets/astronaute.png")}
+                source={require("../assets/astronaute.png")}
             />
         </View>
     );
