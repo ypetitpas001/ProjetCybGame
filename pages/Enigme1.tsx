@@ -19,15 +19,16 @@ export default function Enigme1() {
                 <Text style={styles.texte2}>Voici le tableau de bord</Text>
                 <Image
                     style={styles.tableaudebord}
-                    source={require("./assets/tableaudebord.png")}
+                    source={require("../assets/tableaudebord.png")}
                 />
                 <Text style={styles.texte3}>et voici la console</Text>
             </View>
 
             <View>
                 <TextInput
+                    
                     style={styles.input}
-                    value={'commandes'}
+                    value={'essai : '}
                     placeholder="Commandes"
                 />
             </View>
@@ -36,11 +37,6 @@ export default function Enigme1() {
             <TouchableOpacity style={styles.but}>
                 <Text style={styles.valider}>Valider</Text>
             </TouchableOpacity>
-
-            <Image
-                style={styles.astronaute}
-                source={require("../assets/astronaute.png")}
-            />
         </View>
     );
 }
@@ -95,10 +91,13 @@ const styles = StyleSheet.create({
     input: {
         backgroundColor: "white",
         height: 100,
+        width:'200%',
+
     },
 
     but: {
         alignSelf: "flex-end",
+        marginTop:25,
         marginRight: 25,
     },
 
