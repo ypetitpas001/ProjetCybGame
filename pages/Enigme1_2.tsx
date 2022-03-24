@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert, TextInput } from 'react-native';
 import React from 'react';
 
-export default function Enigme1() {
+export default function Enigme1_2() {
 
 
     return (
@@ -15,11 +15,11 @@ export default function Enigme1() {
             </View>
 
             <View>
-                <Text style={styles.texte1}>Tu vas devoir recueillir des informations importantes pour débloquer la situation, tu peux interagir avec les éléments en cliquant dessus</Text>
-                <Text style={styles.texte2}>Voici le tableau de bord</Text>
+                <Text style={styles.texte1}>Pour pouvoir actionner des boutons du tableau de bord il faut que tu te connecte en mode administrateur, voici les informations dont tu disposes pour trouver le mot de passe</Text>
+                <Text style={styles.texte2}>ID card :</Text>
                 <Image
                     style={styles.tableaudebord}
-                    source={require("../assets/tableaudebord.png")}
+                    source={require("../assets/idcard.jpg")}
                 />
                 <Text style={styles.texte3}>et voici la console</Text>
             </View>
@@ -96,7 +96,6 @@ const styles = StyleSheet.create({
     but: {
         alignSelf: "flex-end",
         marginRight: 25,
-
     },
 
     valider: {

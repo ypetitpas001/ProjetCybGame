@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert } from 'react-native';
 import React from 'react';
-import AppNavigator from './appNavigator';
 
 interface AccueilProps {
     navigation: any;

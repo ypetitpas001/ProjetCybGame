@@ -1,8 +1,11 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert, TouchableOpacityComponent } from 'react-native';
 import React from 'react';
 
-export default function Accueil2() {
+interface Accueil2Props {
+    navigation: any;
+}
 
+export default function Accueil2(props: Accueil2Props) {
 
     return (
         <View style={styles.container}>
@@ -22,7 +25,8 @@ export default function Accueil2() {
             </View>
 
 
-            <TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => props.navigation.navigate('Enigme1')}>
                 <Text style={styles.continuer}>C'est parti !</Text>
             </TouchableOpacity>
 
