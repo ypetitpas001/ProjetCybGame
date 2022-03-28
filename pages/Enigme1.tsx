@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight } from 'react-native';
 import React from 'react';
+import Head from '../components/head';
 
 interface Enigme1Props {
     navigation: any;
@@ -11,13 +12,7 @@ export default function Enigme1(props: Enigme1Props) {
 
     return (
         <View style={styles.container}>
-            <View>
-                <Text style={styles.titre}>CybGame</Text>
-            </View>
-
-            <View>
-                <View style={styles.barre} />
-            </View>
+            <Head />
 
             <View>
                 <Text style={styles.texte1}>Tu vas devoir recueillir des informations importantes pour débloquer la situation, tu peux interagir avec les éléments en cliquant dessus</Text>
@@ -40,7 +35,7 @@ export default function Enigme1(props: Enigme1Props) {
                     onChangeText={(value) => setCommande(value)}
                     onSubmitEditing={() => {
                         if (commande == "oui") {
-                            alert(`la commande est : ${commande}`);
+                            props.navigation.navigate('Enigme2');
                         }
                         else {
                             alert(`la commande n'est pas bonne`);
@@ -48,14 +43,9 @@ export default function Enigme1(props: Enigme1Props) {
                         setCommande("");
                     }}
                     value={commande}
-
                 />
+
             </View>
-
-
-            <TouchableOpacity style={styles.but}>
-                <Text style={styles.valider}>Valider</Text>
-            </TouchableOpacity>
         </View>
     );
 }
@@ -65,20 +55,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#000',
         alignItems: 'center',
-    },
-
-    barre: {
-        marginTop: 25,
-        width: 300,
-        height: 1,
-        backgroundColor: "white",
-
-    },
-
-    titre: {
-        marginTop: 10,
-        color: '#fff',
-        fontSize: 32,
     },
 
     texte1: {
@@ -110,6 +86,7 @@ const styles = StyleSheet.create({
     },
 
     input: {
+        marginTop: 7,
         backgroundColor: "black",
         height: 100,
         width: 325,
@@ -126,6 +103,6 @@ const styles = StyleSheet.create({
     valider: {
         color: '#fff',
         fontSize: 14,
-        marginTop: 25,
+        marginTop: 11,
     },
 });

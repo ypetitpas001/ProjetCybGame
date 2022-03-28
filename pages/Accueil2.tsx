@@ -1,5 +1,7 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert, TouchableOpacityComponent } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
+import Head from '../components/head';
+
 
 interface Accueil2Props {
     navigation: any;
@@ -9,13 +11,7 @@ export default function Accueil2(props: Accueil2Props) {
 
     return (
         <View style={styles.container}>
-            <View>
-                <Text style={styles.titre}>CybGame</Text>
-            </View>
-
-            <View>
-                <View style={styles.barre} />
-            </View>
+            <Head />
 
             <View>
                 <Text style={styles.texte1}>Maintenant que tu connais le contexte, il s'agit de passer à l'action !</Text>
@@ -25,7 +21,7 @@ export default function Accueil2(props: Accueil2Props) {
             </View>
 
 
-            <TouchableOpacity
+            <TouchableOpacity style={styles.but}
                 onPress={() => props.navigation.navigate('Enigme1')}>
                 <Text style={styles.continuer}>C'est parti !</Text>
             </TouchableOpacity>
@@ -45,38 +41,41 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
-    barre: {
-        marginTop: 25,
-        width: 300,
-        height: 1,
-        backgroundColor: "white",
-
-    },
-
-    titre: {
-        marginTop: 10,
-        color: '#fff',
-        fontSize: 32,
-    },
     texte1: {
+        marginLeft: 5,
+        marginRight: 5,
         marginTop: 25,
         color: '#fff',
         fontSize: 14,
     },
     texte2: {
+        marginLeft: 5,
+        marginRight: 5,
         marginTop: 35,
         color: '#fff',
         fontSize: 14,
     },
 
     texte3: {
+        marginLeft: 5,
+        marginRight: 5,
         marginTop: 25,
         color: '#fff',
         fontSize: 14,
     },
 
-    continuer: {
+    but: {
+        alignItems: "center",
+        height: 40,
+        width: 85,
         marginTop: 55,
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: "#fff",
+    },
+
+    continuer: {
+        marginTop: 7,
         color: '#fff',
         fontSize: 14,
     },

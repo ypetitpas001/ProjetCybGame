@@ -1,5 +1,7 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, } from 'react-native';
 import React from 'react';
+import Head from '../components/head';
+import Suivant from '../components/suivant';
 
 interface AccueilProps {
     navigation: any;
@@ -10,13 +12,8 @@ export default function Accueil(props: AccueilProps) {
 
     return (
         <View style={styles.container}>
-            <View>
-                <Text style={styles.titre}>CybGame</Text>
-            </View>
 
-            <View>
-                <View style={styles.barre} />
-            </View>
+            <Head />
 
             <View style={{ marginLeft: 5, marginRight: 5, }}>
                 <Text style={styles.accueil}>Bienvenue à bord du vaisseau JF-8801</Text>
@@ -28,10 +25,8 @@ export default function Accueil(props: AccueilProps) {
             </View>
 
 
-            <TouchableOpacity
-                onPress={() => props.navigation.navigate('Accueil2')}>
-                <Text style={styles.continuer}>Clique pour continuer</Text>
-            </TouchableOpacity>
+
+            <Suivant navigation page="Accueil2" />
 
             <Image
                 style={styles.astronaute}
@@ -46,20 +41,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#000',
         alignItems: 'center',
-    },
-
-    barre: {
-        marginTop: 25,
-        width: 300,
-        height: 1,
-        backgroundColor: "white",
-
-    },
-
-    titre: {
-        marginTop: 10,
-        color: '#fff',
-        fontSize: 32,
     },
 
 
@@ -86,8 +67,18 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
 
-    continuer: {
+    but: {
+        alignItems: "center",
+        height: 40,
+        width: 80,
         marginTop: 55,
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: "#fff",
+    },
+
+    continuer: {
+        marginTop: 7,
         color: '#fff',
         fontSize: 14,
     },
