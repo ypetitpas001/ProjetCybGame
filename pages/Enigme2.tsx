@@ -51,6 +51,8 @@ export default function Enigme1(props: Enigme1Props) {
     );
 }
 
+
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -99,11 +101,5 @@ const styles = StyleSheet.create({
         alignSelf: "flex-end",
         marginRight: 25,
 
-    },
-
-    valider: {
-        color: '#fff',
-        fontSize: 14,
-        marginTop: 25,
     },
 });

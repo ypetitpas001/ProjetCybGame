@@ -97,12 +97,5 @@ const styles = StyleSheet.create({
     but: {
         alignSelf: "flex-end",
         marginRight: 25,
-
-    },
-
-    valider: {
-        color: '#fff',
-        fontSize: 14,
-        marginTop: 11,
     },
 });

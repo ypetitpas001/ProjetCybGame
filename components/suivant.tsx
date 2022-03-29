@@ -6,12 +6,12 @@ interface SuivantProps {
     page: string;
 }
 
-export default function suivant(props: SuivantProps, page: SuivantProps) {
+export default function suivant(props: SuivantProps) {
 
     return (
         <View>
             <TouchableOpacity style={styles.but}
-                onPress={() => props.navigation.navigate(page)}>
+                onPress={() => props.navigation.navigate(props.page)}>
                 <Text style={styles.continuer}>Continuer</Text>
             </TouchableOpacity>
 
