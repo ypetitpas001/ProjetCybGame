@@ -44,11 +44,6 @@ export default function Enigme1_2(props: Enigme1Props) {
 
                 />
             </View>
-
-
-            <TouchableOpacity style={styles.but}>
-                <Text style={styles.valider}>Valider</Text>
-            </TouchableOpacity>
         </View>
     );
 }
@@ -97,11 +92,5 @@ const styles = StyleSheet.create({
     but: {
         alignSelf: "flex-end",
         marginRight: 25,
-    },
-
-    valider: {
-        color: '#fff',
-        fontSize: 14,
-        marginTop: 25,
     },
 });

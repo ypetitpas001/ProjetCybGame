@@ -21,7 +21,7 @@ export default function Enigme1(props: Enigme1Props) {
                 <TouchableHighlight onPress={() => props.navigation.navigate('Enigme1_2')}>
                     <Image
                         style={styles.tableaudebord}
-                        source={require("../assets/tableaudebord.png")}
+                        source={require("../assets/SpaceJF_Red.png")}
                     />
                 </TouchableHighlight>
                 <Text style={styles.texte3}>la console</Text>
