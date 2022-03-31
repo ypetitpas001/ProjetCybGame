@@ -26,14 +26,8 @@ export default function Accueil(props: AccueilProps) {
 
 
 
-            <Suivant navigation={props.navigation} page="Accueil2" />
-            
+            <Suivant navigation={props.navigation} nom="Continuer" page="Accueil2" />
 
-            {/*<TouchableOpacity style={styles.but}
-                onPress={() => props.navigation.navigate('Accueil2')}>
-                <Text style={styles.continuer}>Continuer</Text>
-            </TouchableOpacity>*/
-            }
 
             <Image
                 style={styles.astronaute}

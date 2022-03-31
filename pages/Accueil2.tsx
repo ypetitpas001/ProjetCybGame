@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
+import Suivant from '../components/suivant';
 
 
 interface Accueil2Props {
@@ -21,10 +22,7 @@ export default function Accueil2(props: Accueil2Props) {
             </View>
 
 
-            <TouchableOpacity style={styles.but}
-                onPress={() => props.navigation.navigate('Enigme1')}>
-                <Text style={styles.continuer}>C'est parti !</Text>
-            </TouchableOpacity>
+            <Suivant navigation={props.navigation} nom="C'est parti !" page="Enigme1" />
 
             <Image
                 style={styles.astronaute}
