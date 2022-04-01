@@ -9,20 +9,22 @@ interface Enigme1Props {
     navigation: any;
 }
 
-export default function Enigme1(props: Enigme1Props) {
+export default class Enigme1 extends React.Component<Enigme1Props> {
 
-    const [aide, setState] = React.useState(true);
 
-    const ChangeEtat = () => {
-        if (aide) {
-            setState(false);
+
+    state : {aide:boolean,commande:string}={aide:false,commande:""}
+
+    ChangeEtat = () => {
+        if (this.state.aide) {
+            this.setState({aide:false});
         }
         else {
-            setState(true);
+            this.setState({aide:true});
         }
     }
 
-    const [commande, setCommande] = React.useState("");
+    render() {
 
     return (
         <View style={styles.container}>
@@ -31,7 +33,7 @@ export default function Enigme1(props: Enigme1Props) {
                 <View>
                     <Text style={styles.texte1}>Tu vas devoir recueillir des informations importantes pour débloquer la situation, tu peux interagir avec les éléments en cliquant dessus</Text>
                     <Text style={styles.texte2}>Voici le tableau de bord</Text>
-                    <TouchableHighlight onPress={() => props.navigation.navigate('Enigme1_2')}>
+                    <TouchableHighlight onPress={() => this.props.navigation.navigate('Enigme1_2')}>
                         <Image
                             style={styles.tableaudebord}
                             source={require("../assets/SpaceJF.png")}
@@ -46,17 +48,17 @@ export default function Enigme1(props: Enigme1Props) {
                         placeholderTextColor='green'
                         placeholder="Commandes"
 
-                        onChangeText={(value) => setCommande(value)}
+                        onChangeText={(value) => this.setState({commande:value})}
                         onSubmitEditing={() => {
-                            if (commande == "oui") {
-                                props.navigation.navigate('Enigme2');
+                            if (this.state.commande == "oui") {
+                                this.props.navigation.navigate('Enigme2');
                             }
                             else {
                                 alert(`la commande n'est pas bonne`);
                             }
-                            setCommande("");
+                            this.setState({commande:""});
                         }}
-                        value={commande}
+                        value={this.state.commande}
                     />
 
 
@@ -64,13 +66,13 @@ export default function Enigme1(props: Enigme1Props) {
 
                 <View>
                     <TouchableOpacity style={styles.but}
-                        onPress={() => ChangeEtat()}>
+                        onPress={() => this.ChangeEtat()}>
                         <Text style={styles.continuer}> Aide </Text>
                     </TouchableOpacity>
                 </View>
                 <View>
-                    <Collapsible collapsed={aide} style={styles.collapse}>
-                        <Text style={styles.aide}>
+                    {/* <Collapsible collapsed={this.state.aide} style={styles.collapse}> */}
+                        <Text style={{...styles.aide,...{ display:this.state.aide? 'flex':'none',}}}>
                             Tout d'abord pour valider l'énigme il faut que tu trouves un mot de passe
                             Pour valider les enigmes il te suffit de rentrer le mot de passe dans la console.
 
@@ -79,13 +81,14 @@ export default function Enigme1(props: Enigme1Props) {
                             Souvent les mots de passes sont constitués d'un prénom accompagné d'une série de chiffre (année de naissance par exemple),
                             d'une majuscule et d'un caractère spécial à la fin (par exemple John234*).
                         </Text>
-                    </Collapsible>
+                    {/* </Collapsible> */}
 
                 </View>
 
             </ScrollView>
         </View>
-    );
+        );
+    }
 }
 
 const styles = StyleSheet.create({
@@ -131,6 +134,7 @@ const styles = StyleSheet.create({
         width: 325,
         borderWidth: 2,
         borderColor: "#fff",
+        color:"green",
     },
 
     but: {
@@ -155,8 +159,11 @@ const styles = StyleSheet.create({
     },
 
     aide: {
+        marginTop:50,
         marginLeft: 5,
         marginRight: 5,
         color: "#fff",
+
+
     },
 });

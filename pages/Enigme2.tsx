@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight, ScrollView } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
 
@@ -14,7 +14,9 @@ export default function Enigme1(props: Enigme1Props) {
         <View style={styles.container}>
 
             <Head />
+            <ScrollView>
 
+            
             <View>
                 <Text style={styles.texte1}>Bien joué ! tu as désormais accès au tableau de bord, il semblerait qu'il y ait un bouton qui clignote en rouge.</Text>
                 <Text style={styles.texte2}>le tableau de bord</Text>
@@ -47,6 +49,7 @@ export default function Enigme1(props: Enigme1Props) {
 
                 />
             </View>
+            </ScrollView>
         </View>
     );
 }
@@ -95,6 +98,7 @@ const styles = StyleSheet.create({
         width: 325,
         borderWidth: 2,
         borderColor: "#fff",
+        color:"green",
     },
 
     but: {

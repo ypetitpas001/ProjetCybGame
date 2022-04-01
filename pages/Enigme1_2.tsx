@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
         width: 325,
         borderWidth: 2,
         borderColor: "#fff",
+        color:"green",
     },
 
     but: {
