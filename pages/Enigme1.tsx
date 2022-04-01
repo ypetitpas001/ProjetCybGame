@@ -23,7 +23,7 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
         }
         else {
             this.setState({aide:true});
-            this.scrollViewRef?.scrollTo(this.aideViewInfo?.nativeEvent.layout.y)
+            this.scrollViewRef?.scrollTo({y:(this.aideViewInfo?.nativeEvent as any).pageY})
         }
     }
 
@@ -32,7 +32,7 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
     return (
         <View style={styles.container}>
             <Head />
-            <ScrollView ref={{current:this.scrollViewRef}}>
+            <ScrollView ref={(ref=>this.scrollViewRef=ref)}>
                 <View>
                     <Text style={styles.enigme}>Enigme 1</Text>
                     <Text style={styles.texte1}>Tu vas devoir recueillir des informations importantes pour débloquer la situation, tu peux interagir avec les éléments en cliquant dessus</Text>
