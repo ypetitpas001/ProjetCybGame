@@ -31,6 +31,7 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
             <Head />
             <ScrollView>
                 <View>
+                    <Text style={styles.enigme}>Enigme 1</Text>
                     <Text style={styles.texte1}>Tu vas devoir recueillir des informations importantes pour débloquer la situation, tu peux interagir avec les éléments en cliquant dessus</Text>
                     <Text style={styles.texte2}>Voici le tableau de bord</Text>
                     <TouchableHighlight onPress={() => this.props.navigation.navigate('Enigme1_2')}>
@@ -73,13 +74,23 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                 <View>
                     {/* <Collapsible collapsed={this.state.aide} style={styles.collapse}> */}
                         <Text style={{...styles.aide,...{ display:this.state.aide? 'flex':'none',}}}>
-                            Tout d'abord pour valider l'énigme il faut que tu trouves un mot de passe
-                            Pour valider les enigmes il te suffit de rentrer le mot de passe dans la console.
+                            Pour valider les enigmes il faut que tu trouves un mot de passe et le rentre dans la console.
+                            {"\n"}
+                            {"\n"}
+                            Pour la première enigme il faut que tu te bases sur les informations du commandant de bord du vaisseau
+                            que tu retrouveras en cliquant sur l'ordinateur de bord.
 
-                            Pour l'énigme 1 il faut que tu te bases sur les informations du commandant de bord du vaisseau
-                            Que tu retrouveras en cliquant sur l'ordinateur de bord.
+                            {"\n"}
+                            {"\n"}
                             Souvent les mots de passes sont constitués d'un prénom accompagné d'une série de chiffre (année de naissance par exemple),
                             d'une majuscule et d'un caractère spécial à la fin (par exemple John234*).
+                            {"\n"}
+                            {"\n"}
+                            Bon courage !
+                            {"\n"}
+                            {"\n"}
+                            {"\n"}
+                            {"\n"}
                         </Text>
                     {/* </Collapsible> */}
 
@@ -96,6 +107,14 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#000',
         alignItems: 'center',
+    },
+
+    enigme:{
+        alignSelf:'center',
+        marginTop:10,
+        color:'#fff',
+        fontSize:14,
+        fontWeight:'bold',
     },
 
     texte1: {
@@ -163,7 +182,5 @@ const styles = StyleSheet.create({
         marginLeft: 5,
         marginRight: 5,
         color: "#fff",
-
-
     },
 });

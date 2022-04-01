@@ -9,7 +9,7 @@ interface Enigme1Props {
 
 export default function Enigme1_2(props: Enigme1Props) {
 
-    const [aide, setState] = React.useState(true);
+    const [aide, setState] = React.useState(false);
 
     const ChangeEtat = () => {
         if (aide) {
@@ -27,6 +27,7 @@ export default function Enigme1_2(props: Enigme1Props) {
             <Head />
             <ScrollView>
                 <View>
+                    <Text style={styles.enigme}>Enigme 1</Text>
                     <Text style={styles.texte1}>Pour pouvoir actionner des boutons du tableau de bord il faut que tu te connecte en mode administrateur, voici les informations dont tu disposes pour trouver le mot de passe</Text>
                     <Text style={styles.texte2}>ID card :</Text>
                     <Image
@@ -65,17 +66,27 @@ export default function Enigme1_2(props: Enigme1Props) {
                     </TouchableOpacity>
                 </View>
                 <View>
-                    <Collapsible collapsed={aide} style={styles.collapse}>
-                        <Text style={styles.aide}>
-                            Tout d'abord pour valider l'énigme il faut que tu trouves un mot de passe
-                            Pour valider les enigmes il te suffit de rentrer le mot de passe dans la console.
+                    {/* <Collapsible collapsed={aide} style={styles.collapse}> */}
+                    <Text style={{...styles.aide,...{ display:aide? 'flex':'none',}}}>
+                            Pour valider les enigmes il faut que tu trouves un mot de passe et le rentre dans la console.
+                            {"\n"}
+                            {"\n"}
+                            Pour la première enigme il faut que tu te bases sur les informations du commandant de bord du vaisseau
+                            que tu retrouveras en cliquant sur l'ordinateur de bord.
 
-                            Pour l'énigme 1 il faut que tu te bases sur les informations du commandant de bord du vaisseau
-                            Que tu retrouveras en cliquant sur l'ordinateur de bord.
+                            {"\n"}
+                            {"\n"}
                             Souvent les mots de passes sont constitués d'un prénom accompagné d'une série de chiffre (année de naissance par exemple),
                             d'une majuscule et d'un caractère spécial à la fin (par exemple John234*).
+                            {"\n"}
+                            {"\n"}
+                            Bon courage !
+                            {"\n"}
+                            {"\n"}
+                            {"\n"}
+                            {"\n"}
                         </Text>
-                    </Collapsible>
+                    {/* </Collapsible> */}
 
                 </View>
             </ScrollView>
@@ -88,6 +99,14 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#000',
         alignItems: 'center',
+    },
+
+    enigme:{
+        alignSelf:'center',
+        marginTop:10,
+        color:'#fff',
+        fontSize:14,
+        fontWeight:'bold',
     },
 
     texte1: {
@@ -149,6 +168,7 @@ const styles = StyleSheet.create({
     },
 
     aide: {
+        marginTop:50,
         marginLeft: 5,
         marginRight: 5,
         color: "#fff",
