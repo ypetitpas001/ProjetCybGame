@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHi
 import React from 'react';
 import Head from '../components/head';
 import Collapsible from 'react-native-collapsible';
+import { LayoutChangeEvent } from 'react-native';
 
 
 
@@ -11,16 +12,18 @@ interface Enigme1Props {
 
 export default class Enigme1 extends React.Component<Enigme1Props> {
 
-
-
+    aideViewInfo:null|LayoutChangeEvent=null;
+    scrollViewRef:null| ScrollView=null;
     state : {aide:boolean,commande:string}={aide:false,commande:""}
 
     ChangeEtat = () => {
         if (this.state.aide) {
             this.setState({aide:false});
+            
         }
         else {
             this.setState({aide:true});
+            this.scrollViewRef?.scrollTo(this.aideViewInfo?.nativeEvent.layout.y)
         }
     }
 
@@ -29,7 +32,7 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
     return (
         <View style={styles.container}>
             <Head />
-            <ScrollView>
+            <ScrollView ref={{current:this.scrollViewRef}}>
                 <View>
                     <Text style={styles.enigme}>Enigme 1</Text>
                     <Text style={styles.texte1}>Tu vas devoir recueillir des informations importantes pour débloquer la situation, tu peux interagir avec les éléments en cliquant dessus</Text>
@@ -71,7 +74,7 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                         <Text style={styles.continuer}> Aide </Text>
                     </TouchableOpacity>
                 </View>
-                <View>
+                <View onLayout={(view)=>this.aideViewInfo=view}>
                     {/* <Collapsible collapsed={this.state.aide} style={styles.collapse}> */}
                         <Text style={{...styles.aide,...{ display:this.state.aide? 'flex':'none',}}}>
                             Pour valider les enigmes il faut que tu trouves un mot de passe et le rentre dans la console.
