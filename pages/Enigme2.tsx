@@ -92,8 +92,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                         </TouchableOpacity>
                     </View>
                     <View onLayout={(view) => this.aideViewInfo = view}>
-                        {/* <Collapsible collapsed={aide} style={styles.collapse}> */}
-                        <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                        <Text style={{ ...styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
 
                             Pour la deuxième enigme il faut que tu décodes la chaine de caractères en après avoir cliqué sur le bouton rouge.
                             {"\n"}
@@ -106,17 +105,19 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                             aller sur un site web qui décode des chaines hexadécimales ou bien taper dans la console la commande suivante :
                             {"\n"}
                             {"\n"}
+                        </Text>
+                        <Text style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             unescape('le message à decoder')
                             {"\n"}
                             {"\n"}
-                            Cette commande permet de décoder n'importe quelle chaine de caractères.
+                        </Text>
+                        <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                            Cette commande permet de décoder n'importe quelle chaine de caractère hexadécimale
                             {"\n"}
                             {"\n"}
                             {"\n"}
                             {"\n"}
                         </Text>
-                        {/* </Collapsible> */}
-
                     </View>
 
 
@@ -205,9 +206,13 @@ const styles = StyleSheet.create({
     },
 
     aide: {
-        marginTop: 50,
         marginLeft: 5,
         marginRight: 5,
         color: "#fff",
+    },
+    aideCom: {
+        marginLeft: 5,
+        marginRight: 5,
+        color: "lightgreen",
     },
 });
