@@ -1,14 +1,13 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight, ScrollView } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
-import Collapsible from 'react-native-collapsible';
 import { LayoutChangeEvent } from 'react-native';
 
-interface Enigme1_2Props {
+interface Enigme3Props {
     navigation: any;
 }
 
-export default class Enigme2 extends React.Component<Enigme1_2Props> {
+export default class Enigme3 extends React.Component<Enigme3Props> {
 
     aideViewInfo: null | LayoutChangeEvent = null;
     scrollViewRef: null | ScrollView = null;
@@ -25,22 +24,34 @@ export default class Enigme2 extends React.Component<Enigme1_2Props> {
         }
     }
 
+    ChargeMessage = () => {
+        if (this.state.message) {
+            this.setState({ message: false });
+        }
+        else {
+            this.setState({ message: true });
+        }
+    }
+
     render() {
-
-
 
         return (
             <View style={styles.container}>
+
                 <Head />
                 <ScrollView ref={(ref => this.scrollViewRef = ref)}>
+
+
                     <View>
-                        <Text style={styles.enigme}>Enigme 1</Text>
-                        <Text style={styles.texte1}>Pour pouvoir actionner des boutons du tableau de bord il faut que tu te connecte en mode administrateur, voici les informations dont tu disposes pour trouver le mot de passe</Text>
-                        <Text style={styles.texte2}>ID card :</Text>
-                        <Image
-                            style={styles.tableaudebord}
-                            source={require("../assets/info.png")}
-                        />
+                        <Text style={styles.enigme}>Enigme 2</Text>
+                        <Text style={styles.texte1}>Bien joué ! tu as désormais accès au tableau de bord, il semblerait qu'il y ait un bouton qui clignote en rouge.</Text>
+                        <Text style={styles.texte2}>le tableau de bord</Text>
+                        <TouchableHighlight onPress={() => this.props.navigation.navigate('Enigme1_2')}>
+                            <Image
+                                style={styles.tableaudebord}
+                                source={require("../assets/SpaceJF_Red.png")}
+                            />
+                        </TouchableHighlight>
                         <Text style={styles.texte3}>la console</Text>
                     </View>
 
@@ -52,8 +63,8 @@ export default class Enigme2 extends React.Component<Enigme1_2Props> {
 
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
-                                if (this.state.commande == "Henry85*") {
-                                    this.props.navigation.navigate('Enigme2');
+                                if (this.state.commande == "oui") {
+                                    this.props.navigation.navigate('Enigme3');
                                 }
                                 else {
                                     alert(`la commande n'est pas bonne`);
@@ -65,8 +76,7 @@ export default class Enigme2 extends React.Component<Enigme1_2Props> {
                         />
                     </View>
 
-
-                    <View >
+                    <View>
                         <TouchableOpacity style={styles.but}
                             onPress={() => this.ChangeEtat()}>
                             <Text style={styles.continuer}> Aide </Text>
@@ -96,11 +106,15 @@ export default class Enigme2 extends React.Component<Enigme1_2Props> {
                         {/* </Collapsible> */}
 
                     </View>
+
+
                 </ScrollView>
             </View>
         );
     }
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -118,11 +132,13 @@ const styles = StyleSheet.create({
     },
 
     texte1: {
+        marginLeft: 5,
         marginTop: 25,
         color: '#fff',
         fontSize: 14,
     },
     texte2: {
+        marginLeft: 5,
         marginTop: 35,
         color: '#fff',
         fontSize: 14,
@@ -131,8 +147,8 @@ const styles = StyleSheet.create({
 
     tableaudebord: {
         marginTop: 15,
-        height: 150,
-        width: 330,
+        height: 200,
+        width: 300,
         paddingHorizontal: 8,
         alignSelf: "center",
     },
@@ -146,8 +162,7 @@ const styles = StyleSheet.create({
     input: {
         paddingLeft: 8,
         paddingRight: 8,
-        alignSelf: "center",
-        marginTop: 7,
+        marginTop: 5,
         backgroundColor: "black",
         height: 65,
         width: 325,
@@ -166,7 +181,6 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: "#fff",
     },
-
     continuer: {
         alignSelf: "center",
         marginTop: 7,
