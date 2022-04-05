@@ -85,7 +85,7 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                             {"\n"}
                             {"\n"}
                             Souvent les mots de passes sont constitués d'un prénom accompagné d'une série de chiffre (année de naissance par exemple),
-                            d'une majuscule et d'un caractère spécial à la fin (par exemple John234*).
+                            d'une majuscule et d'un caractère spécial à la fin (par exemple John1978*).
                             {"\n"}
                             {"\n"}
                             Bon courage !

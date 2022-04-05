@@ -146,7 +146,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             {"\n"}
                             {"\n"}
                         </Text>
-                        <Text style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                        <Text selectable={true} style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             nmap "IP" --script ssh-brute passdb=command.txt
                         </Text>
                         <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
@@ -161,7 +161,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             {"\n"}
                             {"\n"}
                         </Text>
-                        <Text style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                        <Text selectable={true} style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             nmap 127.0.0.1
                         </Text>
                         <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>

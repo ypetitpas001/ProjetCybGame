@@ -11,7 +11,7 @@ import Enigme3 from './Enigme3';
 const { Navigator, Screen } = createNativeStackNavigator();
 
 const AppNavigator = () => (
-    <Navigator initialRouteName='Accueil' screenOptions={{ headerShown: false }}>
+    <Navigator initialRouteName='Accueil' screenOptions={{ headerShown: false }} >
         <Screen name="Accueil" component={Accueil} ></Screen>
         <Screen name="Accueil2" component={Accueil2} ></Screen>
         <Screen name="Enigme1" component={Enigme1} ></Screen>

@@ -72,7 +72,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                                 if (this.state.commande == "pannecapteur") {
                                     this.props.navigation.navigate('Enigme3');
                                 }
-                                else if (this.state.commande = "unescape('70%61%6E%6E%65%63%61%70%74%65%75%72')") {
+                                else if (this.state.commande == "unescape('70%61%6E%6E%65%63%61%70%74%65%75%72')") {
                                     alert(`pannecapteur`);
                                 }
                                 else {
@@ -173,6 +173,7 @@ const styles = StyleSheet.create({
     },
 
     input: {
+        alignSelf: 'center',
         paddingLeft: 8,
         paddingRight: 8,
         marginTop: 5,
@@ -199,10 +200,6 @@ const styles = StyleSheet.create({
         marginTop: 7,
         color: '#fff',
         fontSize: 14,
-    },
-
-    collapse: {
-        marginTop: 7,
     },
 
     aide: {
