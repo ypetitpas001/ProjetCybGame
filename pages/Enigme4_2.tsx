@@ -14,7 +14,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
     IPViewInfo: null | LayoutChangeEvent = null;
     comViewInfo: null | LayoutChangeEvent = null;
     scrollViewRef: null | ScrollView = null;
-    state: { aide: boolean, IP: boolean, com: boolean, commande: string } = { aide: false, IP: false, com: false, commande: "" }
+    state: { aide: boolean, fichier: boolean, com: boolean, commande: string } = { aide: false, fichier: false, com: false, commande: "" }
 
     ChangeEtat = () => {
         if (this.state.aide) {
@@ -27,12 +27,12 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         }
     }
 
-    ChargeIP = () => {
-        if (this.state.IP) {
-            this.setState({ IP: false });
+    ChargeFichier = () => {
+        if (this.state.fichier) {
+            this.setState({ fichier: false });
         }
         else {
-            this.setState({ IP: true });
+            this.setState({ fichier: true });
         }
     }
 
@@ -55,16 +55,12 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
 
                     <View>
-                        <Text style={styles.enigme}>Enigme 3</Text>
-                        <Text style={styles.texte1}>Très bien, apparemment le problème viendrait d'une panne d'un capteur permettant de garder la bonne trajectoire en direction de la planète Mars, Il faut que tu corriges le bug en donnant une instruction au système</Text>
-                        <Text style={styles.texte2}>Tu as accès ici au fichier de commandes du système "command.txt"</Text>
+                        <Text style={styles.enigme}>Enigme 4</Text>
+                        <Text style={styles.texte1}>Tu vas devoir modifier les valeurs à la main, les données sont stockées dans le serveur du vaisseau, tu dois les retrouver. Tu as à disposition les codes qui te permettent de faire une requête au serveur.</Text>
+                        <Text style={styles.texte2}>Les codes :</Text>
                     </View>
-                    <View style={{ justifyContent: "space-around", alignItems: "flex-start", flexDirection: "row", marginTop: 25 }}>
-                        <Text selectable={true} style={styles.liste}>assoc{"\n"}at {"\n"}attrib {"\n"}bootcfg {"\n"}chdir
-                            {"\n"}chkdsk {"\n"}cls{"\n"}</Text>
-                        <Text selectable={true} style={styles.liste}>del {"\n"}dir {"\n"}echo {"\n"}fc {"\n"}fsutil {"\n"}ftype
-                            {"\n"}getmac</Text>
-                        <Text selectable={true} style={styles.liste}>goto {"\n"}move {"\n"}netsh {"\n"}setstat {"\n"}path {"\n"}pushd</Text>
+                    <View style={{ marginTop: 15, alignSelf: "center" }}>
+                        <Text selectable={true} style={styles.liste}>1   Position check{"\n"}2   CAP check{"\n"}3   Power Check {"\n"}4   Sensors check {"\n"}</Text>
                     </View>
 
                     <View>
@@ -72,12 +68,12 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                     </View>
 
 
-                    <View onLayout={(test) => this.IPViewInfo = test} style={{ marginTop: 14, flexDirection: "row", display: this.state.IP ? 'flex' : 'none', }}>
-                        <Text selectable={true} style={styles.ip} >IP : 192.168.1.1</Text>
+                    <View onLayout={(test) => this.IPViewInfo = test} style={{ marginTop: 14, flexDirection: "row", display: this.state.fichier ? 'flex' : 'none', }}>
+                        <Text selectable={true} style={styles.ip} >fichier : valeurs.txt</Text>
                     </View>
 
                     <View onLayout={(test) => this.comViewInfo = test} style={{ marginTop: 14, flexDirection: "row", display: this.state.com ? 'flex' : 'none', }}>
-                        <Text selectable={true} style={styles.ip} >chdir</Text>
+                        <Text selectable={true} style={styles.ip} >valeur : 455.2</Text>
                     </View>
 
                     <View>
@@ -88,13 +84,13 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
-                                if (this.state.commande == "nmap 127.0.0.1") {
-                                    this.ChargeIP();
+                                if (this.state.commande == "1; ls" || this.state.commande == "1;ls") {
+                                    this.ChargeFichier();
                                 }
-                                else if (this.state.commande == "nmap 192.168.1.1 --script ssh-brute passdb=command.txt") {
+                                else if (this.state.commande == "1;cat valeurs.txt" || this.state.commande == "1; cat valeurs.txt") {
                                     this.ChargeCommande();
                                 }
-                                else if (this.state.commande == "chdir") {
+                                else if (this.state.commande == "455.2") {
                                     this.props.navigation.navigate('Enigme4');
                                 }
                                 else {
@@ -134,40 +130,36 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                         */}
                     <View onLayout={(view) => this.aideViewInfo = view}>
                         <Text style={{ ...styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
-                            Pour cette enigme une liste de commande t'es proposée
-                            mais tu ne vas les essayer une par une pour dans le but de trouver la bonne (ou peut-être que si)
+                            Après avoir cliqué sur le bouton, 4 codes apparaissent et l'un d'entre eux va te permettre de positionner le vaisseau pour l'atterissage
                             {"\n"}
                             {"\n"}
-                            Sinon tu peux automatiser le processus pour tester les commandes les unes après les autres
-                            Cette méthode s'appelle "brute force", par définition on teste les commandes de manière brute sans tri préalable
+                            Ici tu dois acceder aux informations de la base données du vaisseau. Il s'agit de faire des injections de commandes, fréquemment utilisé sur des machines serveurs peu sécurisées.
                             {"\n"}
                             {"\n"}
-                            Pour ce faire tu peux utiliser la commande :
-                            {"\n"}
-                            {"\n"}
-                        </Text>
-                        <Text selectable={true} style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                            nmap "IP" --script ssh-brute passdb=command.txt
-                        </Text>
-                        <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                            {"\n"}
-                            {"\n"}
-                            Cette commande va permettre de lire le contenu du fichier "command.txt" et tester les commandes du système les unes après les autres
-                            jusqu'à ce que la bonne soit trouvée
-                            {"\n"}
-                            {"\n"}
-                            Il faut que tu renseigne l'adresse IP du serveur sur lequel tu vas entrer ces commandes et pour cela
-                            tu peux utiliser cette commande qui va te permettre de trouver toutes les adresses détéctées sur le serveur
+                            Pour cela je te mets à dispositions plusieurs commandes :
                             {"\n"}
                             {"\n"}
                         </Text>
                         <Text selectable={true} style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                            nmap 127.0.0.1
+                            "numéro";ls
                         </Text>
                         <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             {"\n"}
                             {"\n"}
-                            A noter que dans les cas d'usages réels cela peut prendre beaucoup de temps puisque les mots de passes comportent beaucoup de caractères
+                            Cette commande va te permettre d'afficher tout ce qui est en lien avec le numéro. Par exemple : 3, ls va afficher tous les fichiers relatifs à la puissance du vaisseau.
+                            {"\n"}
+                            {"\n"}
+                            Ensuite il va falloir lire le contenu du fichier pour trouver les informations dont tu as besoin, la commande suivante permet de lire n'importe quel fichier dans une base de données
+                            {"\n"}
+                            {"\n"}
+                        </Text>
+                        <Text selectable={true} style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                            "numero";cat "ton fichier"
+                        </Text>
+                        <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                            {"\n"}
+                            {"\n"}
+                            Par exemple : 3; cat fichier.txt va lire le contenu du fichier "fichier.txt".
                             {"\n"}
                             {"\n"}
                         </Text>
@@ -208,6 +200,15 @@ const styles = StyleSheet.create({
         marginTop: 35,
         color: '#fff',
         fontSize: 14,
+    },
+
+
+    tableaudebord: {
+        marginTop: 15,
+        height: 200,
+        width: 300,
+        paddingHorizontal: 8,
+        alignSelf: "center",
     },
 
     texte3: {

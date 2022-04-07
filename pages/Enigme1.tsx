@@ -4,7 +4,6 @@ import Head from '../components/head';
 import { LayoutChangeEvent } from 'react-native';
 
 
-
 interface Enigme1Props {
     navigation: any;
 }
@@ -18,8 +17,8 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
     ChangeEtat = () => {
         if (this.state.aide) {
             this.setState({ aide: false });
-
         }
+
         else {
             this.setState({ aide: true });
             this.scrollViewRef?.scrollTo({ y: (this.aideViewInfo?.nativeEvent as any).pageY })
