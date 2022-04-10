@@ -96,7 +96,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                                     this.ChargeCommande();
                                 }
                                 else if (this.state.commande == "455.2") {
-                                    this.props.navigation.navigate('Enigme4');
+                                    this.props.navigation.navigate('Enigme5');
                                 }
                                 else {
                                     alert(`la commande n'est pas bonne`);

@@ -9,6 +9,7 @@ import Enigme2 from './Enigme2';
 import Enigme3 from './Enigme3';
 import Enigme4 from './Enigme4';
 import Enigme4_2 from './Enigme4_2';
+import Enigme5 from './Enigme5';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ const AppNavigator = () => (
         <Screen name="Enigme3" component={Enigme3} ></Screen>
         <Screen name="Enigme4" component={Enigme4} ></Screen>
         <Screen name="Enigme4_2" component={Enigme4_2} ></Screen>
+        <Screen name="Enigme5" component={Enigme5} ></Screen>
     </Navigator >
 
 
