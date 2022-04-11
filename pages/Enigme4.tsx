@@ -141,7 +141,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             Ici tu dois acceder aux informations de la base données du vaisseau. Il s'agit de faire des injections de commandes, fréquemment utilisé sur des machines serveurs peu sécurisées.
                             {"\n"}
                             {"\n"}
-                            Pour cela je te mets à dispositions plusieurs commandes :
+                            Pour cela je te mets à disposition plusieurs commandes :
                             {"\n"}
                             {"\n"}
                         </Text>

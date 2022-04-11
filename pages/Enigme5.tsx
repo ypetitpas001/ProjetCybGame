@@ -135,36 +135,36 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                         */}
                     <View onLayout={(view) => this.aideViewInfo = view}>
                         <Text style={{ ...styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
-                            Après avoir cliqué sur le bouton, 4 codes apparaissent et l'un d'entre eux va te permettre de positionner le vaisseau pour l'atterissage
+                            Pour cette enigme il va falloir donner une inscrution au vaisseau avec les nouvelles valeurs en modifiant le hash car c'est le seul moyen que le système comprenne.
                             {"\n"}
                             {"\n"}
-                            Ici tu dois acceder aux informations de la base données du vaisseau. Il s'agit de faire des injections de commandes, fréquemment utilisé sur des machines serveurs peu sécurisées.
+                            Le hash correspondant aux valeurs actuelles t'es donné mais pour pouvoir modifier les valeurs il faut que tu le décodes. Mais juste avant il faut comprendre comment fonctionne un hash.
                             {"\n"}
                             {"\n"}
-                            Pour cela je te mets à dispositions plusieurs commandes :
-                            {"\n"}
-                            {"\n"}
-                        </Text>
-                        <Text selectable={true} style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                            "numéro";ls
-                        </Text>
-                        <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                            {"\n"}
-                            {"\n"}
-                            Cette commande va te permettre d'afficher tout ce qui est en lien avec le numéro. Par exemple : 3, ls va afficher tous les fichiers relatifs à la puissance du vaisseau.
-                            {"\n"}
-                            {"\n"}
-                            Ensuite il va falloir lire le contenu du fichier pour trouver les informations dont tu as besoin, la commande suivante permet de lire n'importe quel fichier dans une base de données
+                            Dans les bases de données les mots de passe sont stockées sous forme de chaine de caractères incompréhensibles afin d'éviter de des hacks. Le mot de passe avant d'être stocké est transformé, "haché" avec un certain algorithme. Il en existe plusieurs et ici on va utiliser le "md5sum".
                             {"\n"}
                             {"\n"}
                         </Text>
                         <Text selectable={true} style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                            "numero";cat "ton fichier"
+                            ReverseMd5 "le hash"
                         </Text>
                         <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             {"\n"}
                             {"\n"}
-                            Par exemple : 3; cat fichier.txt va lire le contenu du fichier "fichier.txt".
+                            Cette commande va te permettre de décoder tous les mots de passe encodés en "md5sum". Par exemple : ReverseMd5 098f6bcd4621d373cade4e832627b4f6 va décoder et renvoyer "test".
+                            {"\n"}
+                            {"\n"}
+                            Ensuite il va falloir modifier les valeurs à entrer dans le vaisseau, la commande suivante permet d'encoder n'importe quelle chaine de caractères en "md5sum"
+                            {"\n"}
+                            {"\n"}
+                        </Text>
+                        <Text selectable={true} style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                            md5sum "les valeurs"
+                        </Text>
+                        <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                            {"\n"}
+                            {"\n"}
+                            Par exemple : md5sum test va encoder "test" sous la forme de ce hash : 098f6bcd4621d373cade4e832627b4f6
                             {"\n"}
                             {"\n"}
                         </Text>
