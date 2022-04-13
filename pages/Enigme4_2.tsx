@@ -140,35 +140,31 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             {"\n"}
                             {"\n"}
                         </Text>
-<<<<<<< HEAD
-        <Text selectable={true} style={{ ...Styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-            "numéro";ls
-=======
+
                         <Text selectable={true} style={{ ...Styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                "numero";ls
->>>>>>> 1b409dfa16778c1b8bda50ece8a1a41d1d53db38
-            </Text>
-            <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                {"\n"}
-                {"\n"}
-                Cette commande va te permettre d'afficher tout ce qui est en lien avec le numéro. Par exemple : 3, ls va afficher tous les fichiers relatifs à la puissance du vaisseau.
-                {"\n"}
-                {"\n"}
-                Ensuite il va falloir lire le contenu du fichier pour trouver les informations dont tu as besoin, la commande suivante permet de lire n'importe quel fichier dans une base de données
-                {"\n"}
-                {"\n"}
-            </Text>
-            <Text selectable={true} style={{ ...Styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                "numero";cat "ton fichier"
-            </Text>
-            <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                {"\n"}
-                {"\n"}
-                Par exemple : 3; cat fichier.txt va lire le contenu du fichier "fichier.txt".
-                {"\n"}
-                {"\n"}
-            </Text>
-        </View>
+                            "numéro";ls
+                        </Text>
+                        <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                            {"\n"}
+                            {"\n"}
+                            Cette commande va te permettre d'afficher tout ce qui est en lien avec le numéro. Par exemple : 3, ls va afficher tous les fichiers relatifs à la puissance du vaisseau.
+                            {"\n"}
+                            {"\n"}
+                            Ensuite il va falloir lire le contenu du fichier pour trouver les informations dont tu as besoin, la commande suivante permet de lire n'importe quel fichier dans une base de données
+                            {"\n"}
+                            {"\n"}
+                        </Text>
+                        <Text selectable={true} style={{ ...Styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                            "numero";cat "ton fichier"
+                        </Text>
+                        <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                            {"\n"}
+                            {"\n"}
+                            Par exemple : 3; cat fichier.txt va lire le contenu du fichier "fichier.txt".
+                            {"\n"}
+                            {"\n"}
+                        </Text>
+                    </View>
 
 
                 </ScrollView >
