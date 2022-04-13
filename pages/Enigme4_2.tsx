@@ -141,7 +141,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             {"\n"}
                         </Text>
                         <Text selectable={true} style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                            "numéro";ls
+                            "numero";ls
                         </Text>
                         <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             {"\n"}
