@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHi
 import React from 'react';
 import Head from '../components/head';
 import { LayoutChangeEvent } from 'react-native';
+import Styles from '../components/styles';
 
 interface Enigme2Props {
     navigation: any;
@@ -37,23 +38,23 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
     render() {
 
         return (
-            <View style={styles.container}>
+            <View style={Styles.container}>
 
                 <Head />
                 <ScrollView ref={(ref => this.scrollViewRef = ref)}>
 
 
                     <View>
-                        <Text style={styles.enigme}>Enigme 2</Text>
-                        <Text style={styles.texte1}>Bien joué ! tu as désormais accès au tableau de bord, il semblerait qu'il y ait un bouton qui clignote en rouge.</Text>
-                        <Text style={styles.texte2}>le tableau de bord</Text>
+                        <Text style={Styles.enigme}>Enigme 2</Text>
+                        <Text style={Styles.texte1}>Bien joué ! tu as désormais accès au tableau de bord, il semblerait qu'il y ait un bouton qui clignote en rouge.</Text>
+                        <Text style={Styles.texte2}>le tableau de bord</Text>
                         <TouchableHighlight onPress={() => this.ChargeMessage()}>
                             <Image
-                                style={styles.tableaudebord}
+                                style={Styles.tableaudebord}
                                 source={require("../assets/SpaceJF_Red.png")}
                             />
                         </TouchableHighlight>
-                        <Text style={styles.texte3}>la console</Text>
+                        <Text style={Styles.console}>la console</Text>
                     </View>
 
                     <View onLayout={(test) => this.messageViewInfo = test}>
@@ -63,7 +64,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
 
                     <View>
                         <TextInput
-                            style={styles.input}
+                            style={Styles.input}
                             placeholderTextColor='lightgreen'
                             placeholder="Commandes"
 
@@ -86,13 +87,13 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                     </View>
 
                     <View>
-                        <TouchableOpacity style={styles.but}
+                        <TouchableOpacity style={Styles.but}
                             onPress={() => this.ChangeEtat()}>
-                            <Text style={styles.continuer}> Aide </Text>
+                            <Text style={Styles.continuer}> Aide </Text>
                         </TouchableOpacity>
                     </View>
                     <View onLayout={(view) => this.aideViewInfo = view}>
-                        <Text style={{ ...styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
+                        <Text style={{ ...Styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
 
                             Pour la deuxième enigme il faut que tu décodes la chaine de caractères en après avoir cliqué sur le bouton rouge.
                             {"\n"}
@@ -106,12 +107,12 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                             {"\n"}
                             {"\n"}
                         </Text>
-                        <Text style={{ ...styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                        <Text style={{ ...Styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             unescape('le message à decoder')
                             {"\n"}
                             {"\n"}
                         </Text>
-                        <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                        <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             Cette commande permet de décoder n'importe quelle chaine de caractère hexadécimale
                             {"\n"}
                             {"\n"}
@@ -126,90 +127,3 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
         );
     }
 }
-
-
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#000',
-        alignItems: 'center',
-    },
-
-    enigme: {
-        alignSelf: 'center',
-        marginTop: 10,
-        color: '#fff',
-        fontSize: 14,
-        fontWeight: 'bold',
-    },
-
-    texte1: {
-        marginLeft: 5,
-        marginTop: 25,
-        color: '#fff',
-        fontSize: 14,
-    },
-    texte2: {
-        marginLeft: 5,
-        marginTop: 35,
-        color: '#fff',
-        fontSize: 14,
-    },
-
-
-    tableaudebord: {
-        marginTop: 15,
-        height: 200,
-        width: 300,
-        paddingHorizontal: 8,
-        alignSelf: "center",
-    },
-
-    texte3: {
-        marginTop: 25,
-        color: '#fff',
-        fontSize: 14,
-    },
-
-    input: {
-        alignSelf: 'center',
-        paddingLeft: 8,
-        paddingRight: 8,
-        marginTop: 5,
-        backgroundColor: "black",
-        height: 65,
-        width: 325,
-        borderWidth: 2,
-        borderColor: "#fff",
-        color: "lightgreen",
-        fontSize: 20,
-    },
-
-    but: {
-        alignSelf: "center",
-        height: 40,
-        width: 80,
-        marginTop: 35,
-        borderRadius: 10,
-        borderWidth: 2,
-        borderColor: "#fff",
-    },
-    continuer: {
-        alignSelf: "center",
-        marginTop: 7,
-        color: '#fff',
-        fontSize: 14,
-    },
-
-    aide: {
-        marginLeft: 5,
-        marginRight: 5,
-        color: "#fff",
-    },
-    aideCom: {
-        marginLeft: 5,
-        marginRight: 5,
-        color: "lightgreen",
-    },
-});

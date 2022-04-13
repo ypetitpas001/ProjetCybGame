@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ScrollView } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
-import Collapsible from 'react-native-collapsible';
 import { LayoutChangeEvent } from 'react-native';
+import Styles from '../components/styles';
 
 interface Enigme1_2Props {
     navigation: any;
@@ -30,23 +30,23 @@ export default class Enigme2 extends React.Component<Enigme1_2Props> {
 
 
         return (
-            <View style={styles.container}>
+            <View style={Styles.container}>
                 <Head />
                 <ScrollView ref={(ref => this.scrollViewRef = ref)}>
                     <View>
-                        <Text style={styles.enigme}>Enigme 1</Text>
-                        <Text style={styles.texte1}>Pour pouvoir actionner des boutons du tableau de bord il faut que tu te connecte en mode administrateur, voici les informations dont tu disposes pour trouver le mot de passe</Text>
-                        <Text style={styles.texte2}>ID card :</Text>
+                        <Text style={Styles.enigme}>Enigme 1</Text>
+                        <Text style={Styles.texte1}>Pour pouvoir actionner des boutons du tableau de bord il faut que tu te connecte en mode administrateur, voici les informations dont tu disposes pour trouver le mot de passe</Text>
+                        <Text style={Styles.texte2}>ID card :</Text>
                         <Image
-                            style={styles.tableaudebord}
+                            style={styles.carte}
                             source={require("../assets/info.png")}
                         />
-                        <Text style={styles.texte3}>la console</Text>
+                        <Text style={Styles.console}>la console</Text>
                     </View>
 
                     <View>
                         <TextInput
-                            style={styles.input}
+                            style={Styles.input}
                             placeholderTextColor='lightgreen'
                             placeholder="Commandes"
 
@@ -67,14 +67,14 @@ export default class Enigme2 extends React.Component<Enigme1_2Props> {
 
 
                     <View >
-                        <TouchableOpacity style={styles.but}
+                        <TouchableOpacity style={Styles.but}
                             onPress={() => this.ChangeEtat()}>
-                            <Text style={styles.continuer}> Aide </Text>
+                            <Text style={Styles.continuer}> Aide </Text>
                         </TouchableOpacity>
                     </View>
                     <View onLayout={(view) => this.aideViewInfo = view}>
                         {/* <Collapsible collapsed={aide} style={styles.collapse}> */}
-                        <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                        <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             Pour valider les enigmes il faut que tu trouves un mot de passe et le rentre dans la console.
                             {"\n"}
                             {"\n"}
@@ -103,85 +103,12 @@ export default class Enigme2 extends React.Component<Enigme1_2Props> {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#000',
-        alignItems: 'center',
-    },
 
-    enigme: {
-        alignSelf: 'center',
-        marginTop: 10,
-        color: '#fff',
-        fontSize: 14,
-        fontWeight: 'bold',
-    },
-
-    texte1: {
-        marginTop: 25,
-        color: '#fff',
-        fontSize: 14,
-    },
-    texte2: {
-        marginTop: 35,
-        color: '#fff',
-        fontSize: 14,
-    },
-
-
-    tableaudebord: {
+    carte: {
         marginTop: 15,
         height: 150,
         width: 330,
         paddingHorizontal: 8,
         alignSelf: "center",
-    },
-
-    texte3: {
-        marginTop: 25,
-        color: '#fff',
-        fontSize: 14,
-    },
-
-    input: {
-        paddingLeft: 8,
-        paddingRight: 8,
-        alignSelf: "center",
-        marginTop: 7,
-        backgroundColor: "black",
-        height: 65,
-        width: 325,
-        borderWidth: 2,
-        borderColor: "#fff",
-        color: "lightgreen",
-        fontSize: 20,
-    },
-
-    but: {
-        alignSelf: "center",
-        height: 40,
-        width: 80,
-        marginTop: 35,
-        borderRadius: 10,
-        borderWidth: 2,
-        borderColor: "#fff",
-    },
-
-    continuer: {
-        alignSelf: "center",
-        marginTop: 7,
-        color: '#fff',
-        fontSize: 14,
-    },
-
-    collapse: {
-        marginTop: 7,
-    },
-
-    aide: {
-        marginTop: 50,
-        marginLeft: 5,
-        marginRight: 5,
-        color: "#fff",
     },
 });

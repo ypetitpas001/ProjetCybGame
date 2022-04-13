@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHi
 import { LayoutChangeEvent } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
-import Aide from '../components/aide';
+import Styles from '../components/styles';
 
 interface Enigme3Props {
     navigation: any;
@@ -39,30 +39,30 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
     render() {
 
         return (
-            <View style={styles.container}>
+            <View style={Styles.container}>
 
                 <Head />
                 <ScrollView ref={(ref => this.scrollViewRef = ref)}>
 
 
                     <View>
-                        <Text style={styles.enigme}>Enigme 6</Text>
-                        <Text style={styles.texte1}>Bravo le vaisseau est en train d'atterrir et tout se déroule à la perfection. Les astronautes te remercient pour ton aide précieuse, il reste une dernière tâche à accomplir, ouvrir la porte qui mène à l'extérieur. Sur la porte les hackers ont laissé une image, qui va certainement t'aider pour trouver le mot de passe.</Text>
+                        <Text style={Styles.enigme}>Enigme 6</Text>
+                        <Text style={Styles.texte1}>Bravo le vaisseau est en train d'atterrir et tout se déroule à la perfection. Les astronautes te remercient pour ton aide précieuse, il reste une dernière tâche à accomplir, ouvrir la porte qui mène à l'extérieur. Sur la porte les hackers ont laissé une image, qui va certainement t'aider pour trouver le mot de passe.</Text>
 
                     </View>
 
                     <Image
-                        style={styles.tableaudebord}
+                        style={Styles.tableaudebord}
                         source={require("../assets/ch2.png")}
                     />
 
                     <View>
-                        <Text style={styles.texte3}>la console</Text>
+                        <Text style={Styles.console}>la console</Text>
                     </View>
 
                     <View>
                         <TextInput
-                            style={styles.input}
+                            style={Styles.input}
                             placeholderTextColor='lightgreen'
                             placeholder="Commandes"
 
@@ -82,9 +82,9 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                     </View>
 
                     <View>
-                        <TouchableOpacity style={styles.but}
+                        <TouchableOpacity style={Styles.but}
                             onPress={() => this.ChangeEtat()}>
-                            <Text style={styles.continuer}> Aide </Text>
+                            <Text style={Styles.continuer}> Aide </Text>
                         </TouchableOpacity>
                     </View>
                     {/*
@@ -107,7 +107,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             {"\n"}`} />
                         */}
                     <View onLayout={(view) => this.aideViewInfo = view}>
-                        <Text style={{ ...styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
+                        <Text style={{ ...Styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
                             Observe bien et n'hesite pas à zoomer :)
                             {"\n"}
                             {"\n"}
@@ -120,106 +120,3 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         );
     }
 }
-
-
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#000',
-        alignItems: 'center',
-    },
-
-    enigme: {
-        alignSelf: 'center',
-        marginTop: 10,
-        color: '#fff',
-        fontSize: 14,
-        fontWeight: 'bold',
-    },
-
-    texte1: {
-        marginLeft: 5,
-        marginTop: 25,
-        color: '#fff',
-        fontSize: 14,
-    },
-    texte2: {
-        marginLeft: 5,
-        marginTop: 35,
-        color: '#fff',
-        fontSize: 14,
-    },
-
-
-    tableaudebord: {
-        marginTop: 15,
-        height: 200,
-        width: 300,
-        paddingHorizontal: 8,
-        alignSelf: "center",
-    },
-
-    texte3: {
-        marginTop: 25,
-        color: '#fff',
-        fontSize: 14,
-    },
-
-    liste: {
-        fontSize: 14,
-        color: "lightgreen",
-        marginLeft: 5,
-    },
-
-    ip: {
-        fontSize: 14,
-        color: "lightgreen",
-    },
-
-    input: {
-        alignSelf: "center",
-        paddingLeft: 8,
-        paddingRight: 8,
-        marginTop: 5,
-        backgroundColor: "black",
-        height: 65,
-        width: 325,
-        borderWidth: 2,
-        borderColor: "#fff",
-        color: "lightgreen",
-        fontSize: 20,
-    },
-
-    but: {
-        alignSelf: "center",
-        height: 40,
-        width: 80,
-        marginTop: 35,
-        borderRadius: 10,
-        borderWidth: 2,
-        borderColor: "#fff",
-    },
-    continuer: {
-        alignSelf: "center",
-        marginTop: 7,
-        color: '#fff',
-        fontSize: 14,
-    },
-
-    collapse: {
-        marginTop: 7,
-    },
-
-    aide: {
-        marginLeft: 5,
-        marginRight: 5,
-        color: "#fff",
-    },
-    aideCom: {
-        alignSelf: "center",
-        marginLeft: 5,
-        marginRight: 5,
-        color: "lightgreen",
-    },
-});
