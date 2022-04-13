@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, Animated, ScrollView, Dimensions } from 'react-native';
 import { LayoutChangeEvent } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
 import Styles from '../components/styles';
+import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 
 interface Enigme3Props {
     navigation: any;
@@ -15,6 +16,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
     solHash: null | LayoutChangeEvent = null;
     scrollViewRef: null | ScrollView = null;
     state: { aide: boolean, valeurs: boolean, hash: boolean, commande: string } = { aide: false, valeurs: false, hash: false, commande: "" }
+    scale = new Animated.Value(1);
 
     ChangeEtat = () => {
         if (this.state.aide) {
@@ -36,6 +38,16 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         }
     }
 
+    onPinchEvent = Animated.event([
+        { nativeEvent: { scale: this.scale } }
+    ], { useNativeDriver: true })
+
+    onPinchStateChange = (event) => {
+        if (event.nativeEvent.oldState === GestureHandler.State.ACTIVE) {
+            Animated.spring(this.scale, { toValue: 1, useNativeDriver: true, }).start();
+        }
+    }
+
     render() {
 
         return (
@@ -50,11 +62,17 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                         <Text style={Styles.texte1}>Bravo le vaisseau est en train d'atterrir et tout se déroule à la perfection. Les astronautes te remercient pour ton aide précieuse, il reste une dernière tâche à accomplir, ouvrir la porte qui mène à l'extérieur. Sur la porte les hackers ont laissé une image, qui va certainement t'aider pour trouver le mot de passe.</Text>
 
                     </View>
+                    <View>
+                        <PinchGestureHandler
+                            onGestureEvent={this.onPinchEvent}
+                        >
+                            <Animated.Image
+                                style={{ ...styles.img, ...{ transform: [{ scale: this.scale }] } }}
+                                source={require("../assets/ch2.png")}
+                            />
+                        </PinchGestureHandler>
 
-                    <Image
-                        style={Styles.tableaudebord}
-                        source={require("../assets/ch2.png")}
-                    />
+                    </View>
 
                     <View>
                         <Text style={Styles.console}>la console</Text>
@@ -120,3 +138,19 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         );
     }
 }
+
+
+const styles = StyleSheet.create({
+
+    img: {
+        width: 300,
+        height: 200,
+        marginTop: 15,
+        paddingHorizontal: 8,
+        alignSelf: "center",
+    },
+});
+function onGestureEvent(arg0: { state: any; scale: any; focalX: any; focalY: any; }) {
+    throw new Error('Function not implemented.');
+}
+

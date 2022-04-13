@@ -2,13 +2,13 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Alert, TextInp
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import AppNavigator from './pages/appNavigator';
+import Enigme6 from './pages/Enigme6';
 
 export default function App() {
 
   return (
-    <NavigationContainer>
-      <AppNavigator />
-    </NavigationContainer>
+
+    <Enigme6 />
   );
 }
 
@@ -19,3 +19,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+
+{/*<NavigationContainer>
+      <AppNavigator />
+  </NavigationContainer>*/}
