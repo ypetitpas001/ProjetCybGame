@@ -23,11 +23,8 @@ export default function suivant(props: SuivantProps) {
 
 const styles = StyleSheet.create({
 
-    container: {
-        alignItems: 'center',
-    },
-
     but: {
+        alignSelf: "center",
         alignItems: "center",
         height: 40,
         width: 80,

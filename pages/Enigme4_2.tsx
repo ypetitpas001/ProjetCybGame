@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import { LayoutChangeEvent } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
@@ -109,25 +109,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             <Text style={Styles.continuer}> Aide </Text>
                         </TouchableOpacity>
                     </View>
-                    {/*
-                        <Aide texte={`Pour valider les enigmes il faut que tu trouves un mot de passe et le rentre dans la console.
-                            {"\n"}
-                            {"\n"}
-                            Pour la première enigme il faut que tu te bases sur les informations du commandant de bord du vaisseau
-                            que tu retrouveras en cliquant sur l'ordinateur de bord.
 
-                            {"\n"}
-                            {"\n"}
-                            Souvent les mots de passes sont constitués d'un prénom accompagné d'une série de chiffre (année de naissance par exemple),
-                            d'une majuscule et d'un caractère spécial à la fin (par exemple John234*).
-                            {"\n"}
-                            {"\n"}
-                            Bon courage !
-                            {"\n"}
-                            {"\n"}
-                            {"\n"}
-                            {"\n"}`} />
-                        */}
                     <View onLayout={(view) => this.aideViewInfo = view}>
                         <Text style={{ ...Styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
                             Après avoir cliqué sur le bouton, 4 codes apparaissent et l'un d'entre eux va te permettre de positionner le vaisseau pour l'atterissage
@@ -142,12 +124,12 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                         </Text>
 
                         <Text selectable={true} style={{ ...Styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                            "numéro";ls
+                            "numéro"; ls
                         </Text>
                         <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             {"\n"}
                             {"\n"}
-                            Cette commande va te permettre d'afficher tout ce qui est en lien avec le numéro. Par exemple : 3, ls va afficher tous les fichiers relatifs à la puissance du vaisseau.
+                            Cette commande va te permettre d'afficher tout ce qui est en lien avec le numéro. Par exemple : 3; ls va afficher tous les fichiers relatifs à la puissance du vaisseau.
                             {"\n"}
                             {"\n"}
                             Ensuite il va falloir lire le contenu du fichier pour trouver les informations dont tu as besoin, la commande suivante permet de lire n'importe quel fichier dans une base de données
@@ -155,7 +137,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             {"\n"}
                         </Text>
                         <Text selectable={true} style={{ ...Styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                            "numero";cat "ton fichier"
+                            "numero"; cat "ton fichier"
                         </Text>
                         <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             {"\n"}

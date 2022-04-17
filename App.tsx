@@ -8,7 +8,9 @@ export default function App() {
 
   return (
 
-    <Enigme6 />
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
   );
 }
 

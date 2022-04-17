@@ -114,31 +114,13 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             <Text style={Styles.continuer}> Aide </Text>
                         </TouchableOpacity>
                     </View>
-                    {/*
-                        <Aide texte={`Pour valider les enigmes il faut que tu trouves un mot de passe et le rentre dans la console.
-                            {"\n"}
-                            {"\n"}
-                            Pour la première enigme il faut que tu te bases sur les informations du commandant de bord du vaisseau
-                            que tu retrouveras en cliquant sur l'ordinateur de bord.
 
-                            {"\n"}
-                            {"\n"}
-                            Souvent les mots de passes sont constitués d'un prénom accompagné d'une série de chiffre (année de naissance par exemple),
-                            d'une majuscule et d'un caractère spécial à la fin (par exemple John234*).
-                            {"\n"}
-                            {"\n"}
-                            Bon courage !
-                            {"\n"}
-                            {"\n"}
-                            {"\n"}
-                            {"\n"}`} />
-                        */}
                     <View onLayout={(view) => this.aideViewInfo = view}>
                         <Text style={{ ...Styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
                             Après avoir cliqué sur le bouton, 4 codes apparaissent et l'un d'entre eux va te permettre de positionner le vaisseau pour l'atterissage
                             {"\n"}
                             {"\n"}
-                            Ici tu dois acceder aux informations de la base données du vaisseau. Il s'agit de faire des injections de commandes, fréquemment utilisé sur des machines serveurs peu sécurisées.
+                            Ici tu dois acceder aux informations de la base de données du vaisseau. Il s'agit de faire des injections de commandes, fréquemment utilisé sur des machines serveurs peu sécurisées.
                             {"\n"}
                             {"\n"}
                             Pour cela je te mets à disposition plusieurs commandes :

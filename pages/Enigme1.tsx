@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight, ScrollView } from 'react-native';
+import { Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight, ScrollView } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
 import { LayoutChangeEvent } from 'react-native';
@@ -56,6 +56,10 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                                 if (this.state.commande == "Henry85*") {
                                     this.props.navigation.navigate('Enigme2');
                                 }
+                                else if (this.state.commande == "Ender") {
+                                    this.props.navigation.navigate('Felicitation');
+                                }
+
                                 else {
                                     alert(`la commande n'est pas bonne`);
                                 }

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import { LayoutChangeEvent } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
@@ -56,7 +56,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
                     <View>
                         <Text style={Styles.enigme}>Enigme 5</Text>
-                        <Text style={Styles.texte1}>Bien joué ! il ne te reste plus qu'à modifier la puissance des moteurs, pour ce faire tu dois créer un hash (une chaine de caractère) qui n'est compréhensible que par le système. Tu as juste en dessous le hash qui correspond à la vitesse nominale actuelle. Tu as à disposition les valeurs à entrer pour la régler la puissance afin d'avoir la bonne vitesse d'atterrissage.</Text>
+                        <Text style={Styles.texte1}>Bien joué ! il ne te reste plus qu'à modifier la puissance des moteurs, pour ce faire tu dois créer un hash (une chaine de caractère) qui n'est compréhensible que par le système. Tu as juste en dessous le hash qui correspond à la vitesse nominale actuelle. Tu as à disposition les valeurs à entrer pour régler la puissance afin d'avoir la bonne vitesse d'atterrissage.</Text>
                         <Text style={Styles.texte2}>Les valeurs de puissance et de vitesse :</Text>
                     </View>
 
@@ -114,25 +114,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             <Text style={Styles.continuer}> Aide </Text>
                         </TouchableOpacity>
                     </View>
-                    {/*
-                        <Aide texte={`Pour valider les enigmes il faut que tu trouves un mot de passe et le rentre dans la console.
-                            {"\n"}
-                            {"\n"}
-                            Pour la première enigme il faut que tu te bases sur les informations du commandant de bord du vaisseau
-                            que tu retrouveras en cliquant sur l'ordinateur de bord.
 
-                            {"\n"}
-                            {"\n"}
-                            Souvent les mots de passes sont constitués d'un prénom accompagné d'une série de chiffre (année de naissance par exemple),
-                            d'une majuscule et d'un caractère spécial à la fin (par exemple John234*).
-                            {"\n"}
-                            {"\n"}
-                            Bon courage !
-                            {"\n"}
-                            {"\n"}
-                            {"\n"}
-                            {"\n"}`} />
-                        */}
                     <View onLayout={(view) => this.aideViewInfo = view}>
                         <Text style={{ ...Styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
                             Pour cette enigme il va falloir donner une inscrution au vaisseau avec les nouvelles valeurs en modifiant le hash car c'est le seul moyen que le système comprenne.
@@ -141,7 +123,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             Le hash correspondant aux valeurs actuelles t'es donné mais pour pouvoir modifier les valeurs il faut que tu le décodes. Mais juste avant il faut comprendre comment fonctionne un hash.
                             {"\n"}
                             {"\n"}
-                            Dans les bases de données les mots de passe sont stockées sous forme de chaine de caractères incompréhensibles afin d'éviter de des hacks. Le mot de passe avant d'être stocké est transformé, "haché" avec un certain algorithme. Il en existe plusieurs et ici on va utiliser le "md5sum".
+                            Dans les bases de données les mots de passe sont stockées sous forme de chaine de caractères incompréhensibles afin d'éviter des hacks. Le mot de passe avant d'être stocké est transformé est "haché" avec un certain algorithme. Il en existe plusieurs et ici on va utiliser le "md5sum".
                             {"\n"}
                             {"\n"}
                         </Text>

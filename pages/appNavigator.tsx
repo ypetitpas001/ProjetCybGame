@@ -11,21 +11,23 @@ import Enigme4 from './Enigme4';
 import Enigme4_2 from './Enigme4_2';
 import Enigme5 from './Enigme5';
 import Enigme6 from './Enigme6';
+import Felicitation from './Felicitation';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
 const AppNavigator = () => (
-    <Navigator initialRouteName='Accueil' screenOptions={{ headerShown: false }} >
-        <Screen name="Accueil" component={Accueil} ></Screen>
-        <Screen name="Accueil2" component={Accueil2} ></Screen>
-        <Screen name="Enigme1" component={Enigme1} ></Screen>
-        <Screen name="Enigme1_2" component={Enigme1_2} ></Screen>
-        <Screen name="Enigme2" component={Enigme2} ></Screen>
-        <Screen name="Enigme3" component={Enigme3} ></Screen>
-        <Screen name="Enigme4" component={Enigme4} ></Screen>
-        <Screen name="Enigme4_2" component={Enigme4_2} ></Screen>
-        <Screen name="Enigme5" component={Enigme5} ></Screen>
-        <Screen name="Enigme6" component={Enigme6} ></Screen>
+    <Navigator initialRouteName='Accueil' screenOptions={{ headerStyle: { backgroundColor: "black" }, headerShown: true }} >
+        <Screen name="Accueil" component={Accueil} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
+        <Screen name="Accueil2" component={Accueil2} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
+        <Screen name="Enigme1" component={Enigme1} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
+        <Screen name="Enigme1_2" component={Enigme1_2} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
+        <Screen name="Enigme2" component={Enigme2} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
+        <Screen name="Enigme3" component={Enigme3} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
+        <Screen name="Enigme4" component={Enigme4} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
+        <Screen name="Enigme4_2" component={Enigme4_2} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
+        <Screen name="Enigme5" component={Enigme5} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
+        <Screen name="Enigme6" component={Enigme6} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
+        <Screen name="Felicitation" component={Felicitation} options={{ headerTitleStyle: { fontSize: 30 }, title: 'CybGame', headerTitleAlign: "center", headerTintColor: "white" }}></Screen>
     </Navigator >
 
 

@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, Animated, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Animated, ScrollView } from 'react-native';
 import { LayoutChangeEvent } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
 import Styles from '../components/styles';
-import { PinchGestureHandler, State } from 'react-native-gesture-handler';
+import { PinchGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
 
 interface Enigme3Props {
     navigation: any;
@@ -15,7 +15,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
     resValeurs: null | LayoutChangeEvent = null;
     solHash: null | LayoutChangeEvent = null;
     scrollViewRef: null | ScrollView = null;
-    state: { aide: boolean, valeurs: boolean, hash: boolean, commande: string } = { aide: false, valeurs: false, hash: false, commande: "" }
+    state: { aide: boolean, valeurs: boolean, commande: string } = { aide: false, valeurs: false, commande: "" }
     scale = new Animated.Value(1);
 
     ChangeEtat = () => {
@@ -63,14 +63,16 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
                     </View>
                     <View>
-                        <PinchGestureHandler
-                            onGestureEvent={this.onPinchEvent}
-                        >
-                            <Animated.Image
-                                style={{ ...styles.img, ...{ transform: [{ scale: this.scale }] } }}
-                                source={require("../assets/ch2.png")}
-                            />
-                        </PinchGestureHandler>
+                        <GestureHandlerRootView>
+                            <PinchGestureHandler
+                                onGestureEvent={this.onPinchEvent}
+                            >
+                                <Animated.Image
+                                    style={{ ...styles.img, ...{ transform: [{ scale: this.scale }] } }}
+                                    source={require("../assets/ch2.png")}
+                                />
+                            </PinchGestureHandler>
+                        </GestureHandlerRootView>
 
                     </View>
 
@@ -87,7 +89,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
                                 if (this.state.commande == "BRAVO") {
-                                    alert(`BRAVO !!!!!!!!!`);
+                                    this.props.navigation.navigate('Felicitation');
                                 }
                                 else {
                                     alert(`la commande n'est pas bonne`);
@@ -105,25 +107,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             <Text style={Styles.continuer}> Aide </Text>
                         </TouchableOpacity>
                     </View>
-                    {/*
-                        <Aide texte={`Pour valider les enigmes il faut que tu trouves un mot de passe et le rentre dans la console.
-                            {"\n"}
-                            {"\n"}
-                            Pour la première enigme il faut que tu te bases sur les informations du commandant de bord du vaisseau
-                            que tu retrouveras en cliquant sur l'ordinateur de bord.
 
-                            {"\n"}
-                            {"\n"}
-                            Souvent les mots de passes sont constitués d'un prénom accompagné d'une série de chiffre (année de naissance par exemple),
-                            d'une majuscule et d'un caractère spécial à la fin (par exemple John234*).
-                            {"\n"}
-                            {"\n"}
-                            Bon courage !
-                            {"\n"}
-                            {"\n"}
-                            {"\n"}
-                            {"\n"}`} />
-                        */}
                     <View onLayout={(view) => this.aideViewInfo = view}>
                         <Text style={{ ...Styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
                             Observe bien et n'hesite pas à zoomer :)

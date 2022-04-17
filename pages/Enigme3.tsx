@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import { LayoutChangeEvent } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
@@ -113,25 +113,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             <Text style={Styles.continuer}> Aide </Text>
                         </TouchableOpacity>
                     </View>
-                    {/*
-                        <Aide texte={`Pour valider les enigmes il faut que tu trouves un mot de passe et le rentre dans la console.
-                            {"\n"}
-                            {"\n"}
-                            Pour la première enigme il faut que tu te bases sur les informations du commandant de bord du vaisseau
-                            que tu retrouveras en cliquant sur l'ordinateur de bord.
 
-                            {"\n"}
-                            {"\n"}
-                            Souvent les mots de passes sont constitués d'un prénom accompagné d'une série de chiffre (année de naissance par exemple),
-                            d'une majuscule et d'un caractère spécial à la fin (par exemple John234*).
-                            {"\n"}
-                            {"\n"}
-                            Bon courage !
-                            {"\n"}
-                            {"\n"}
-                            {"\n"}
-                            {"\n"}`} />
-                        */}
                     <View onLayout={(view) => this.aideViewInfo = view}>
                         <Text style={{ ...Styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
                             Pour cette enigme une liste de commande t'es proposée
