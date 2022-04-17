@@ -27,12 +27,12 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         }
     }
 
-    ChargeFichier = () => {
+    ChargeFichier = (param: boolean) => {
         if (this.state.valeurs) {
-            this.setState({ valeurs: false });
+            this.setState({ param: false });
         }
         else {
-            this.setState({ valeurs: true });
+            this.setState({ param: true });
         }
     }
 
@@ -90,7 +90,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
                                 if (this.state.commande == "ReverseMd5 e3d182270702a605bd4054c922b66b87") {
-                                    this.ChargeFichier();
+                                    this.ChargeFichier(this.state.valeurs);
                                 }
                                 else if (this.state.commande == "md5sum 1500:250") {
                                     this.ChargeCommande();

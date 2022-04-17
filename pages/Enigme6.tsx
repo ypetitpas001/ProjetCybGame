@@ -3,7 +3,6 @@ import { LayoutChangeEvent } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
 import Styles from '../components/styles';
-import { PinchGestureHandler, GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
 import ImageZoom from 'react-native-image-pan-zoom';
 
 interface Enigme3Props {
@@ -39,14 +38,6 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         }
     }
 
-    /*handlePan = Animated.event([
-        { nativeEvent: { scale: this.scale } }
-    ])
-    onPinchEvent = Animated.event([
-        { nativeEvent: { scale: this.scale } }
-    ], { useNativeDriver: true })*/
-
-
     render() {
 
         return (
@@ -72,18 +63,6 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             <Image style={{ ...styles.img, }}
                                 source={require("../assets/ch3.png")} />
                         </ImageZoom>
-                        {/*<PanGestureHandler onGestureEvent={this.handlePan}>
-                            <GestureHandlerRootView>
-                                <PinchGestureHandler
-                                    onGestureEvent={this.onPinchEvent}
-                                >
-                                    <Animated.Image
-                                        style={{ ...styles.img, ...{ transform: [{ scale: this.scale }] } }}
-                                        source={require("../assets/ch2.png")}
-                                    />
-                                </PinchGestureHandler>
-                            </GestureHandlerRootView>
-        </PanGestureHandler>*/}
                     </View>
 
                     <View>
@@ -144,7 +123,4 @@ const styles = StyleSheet.create({
         alignSelf: "center",
     },
 });
-function onGestureEvent(arg0: { state: any; scale: any; focalX: any; focalY: any; }) {
-    throw new Error('Function not implemented.');
-}
 

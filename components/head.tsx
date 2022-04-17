@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image, BackHandler } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 
 export default class head extends React.Component {
