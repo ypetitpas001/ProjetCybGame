@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Animated, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Animated, ScrollView, Image, Dimensions } from 'react-native';
 import { LayoutChangeEvent } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
 import Styles from '../components/styles';
-import { PinchGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
+import { PinchGestureHandler, GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
+import ImageZoom from 'react-native-image-pan-zoom';
 
 interface Enigme3Props {
     navigation: any;
@@ -38,15 +39,13 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         }
     }
 
+    /*handlePan = Animated.event([
+        { nativeEvent: { scale: this.scale } }
+    ])
     onPinchEvent = Animated.event([
         { nativeEvent: { scale: this.scale } }
-    ], { useNativeDriver: true })
+    ], { useNativeDriver: true })*/
 
-    onPinchStateChange = (event) => {
-        if (event.nativeEvent.oldState === GestureHandler.State.ACTIVE) {
-            Animated.spring(this.scale, { toValue: 1, useNativeDriver: true, }).start();
-        }
-    }
 
     render() {
 
@@ -63,17 +62,28 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
                     </View>
                     <View>
-                        <GestureHandlerRootView>
-                            <PinchGestureHandler
-                                onGestureEvent={this.onPinchEvent}
-                            >
-                                <Animated.Image
-                                    style={{ ...styles.img, ...{ transform: [{ scale: this.scale }] } }}
-                                    source={require("../assets/ch2.png")}
-                                />
-                            </PinchGestureHandler>
-                        </GestureHandlerRootView>
+                        <ImageZoom style={{ alignSelf: "center" }}
 
+                            cropWidth={300}
+                            cropHeight={250}
+                            imageWidth={300}
+                            imageHeight={200}
+                            pinchToZoom={true}>
+                            <Image style={{ ...styles.img, }}
+                                source={require("../assets/ch3.png")} />
+                        </ImageZoom>
+                        {/*<PanGestureHandler onGestureEvent={this.handlePan}>
+                            <GestureHandlerRootView>
+                                <PinchGestureHandler
+                                    onGestureEvent={this.onPinchEvent}
+                                >
+                                    <Animated.Image
+                                        style={{ ...styles.img, ...{ transform: [{ scale: this.scale }] } }}
+                                        source={require("../assets/ch2.png")}
+                                    />
+                                </PinchGestureHandler>
+                            </GestureHandlerRootView>
+        </PanGestureHandler>*/}
                     </View>
 
                     <View>
