@@ -70,11 +70,11 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
 
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
-                                if (this.state.commande == "pannecapteur") {
+                                if (this.state.commande.toLowerCase().replace(/ /g, '') == "pannecapteur") {
                                     this.props.navigation.navigate('Enigme3');
                                 }
-                                else if (this.state.commande == "unescape(70%61%6E%6E%65%63%61%70%74%65%75%72)") {
-                                    alert(`pannecapteur`);
+                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "unescape(70%61%6E%6E%65%63%61%70%74%65%75%72)") {
+                                    alert(`mot de passe : pannecapteur`);
                                 }
                                 else {
                                     alert(`la commande n'est pas bonne`);

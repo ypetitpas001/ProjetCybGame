@@ -27,12 +27,12 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         }
     }
 
-    ChargeFichier = (param: boolean) => {
+    ChargeFichier = () => {
         if (this.state.valeurs) {
-            this.setState({ param: false });
+            this.setState({ valeurs: false });
         }
         else {
-            this.setState({ param: true });
+            this.setState({ valeurs: true });
         }
     }
 
@@ -89,17 +89,17 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
-                                if (this.state.commande == "ReverseMd5 e3d182270702a605bd4054c922b66b87") {
-                                    this.ChargeFichier(this.state.valeurs);
+                                if (this.state.commande.toLowerCase().replace(/ /g, '') == "reversemd5e3d182270702a605bd4054c922b66b87") {
+                                    this.ChargeFichier();
                                 }
-                                else if (this.state.commande == "md5sum 1500:250") {
+                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "md5sum1500:250") {
                                     this.ChargeCommande();
                                 }
-                                else if (this.state.commande == "21110e3321f952361f93f513e9d4e131") {
+                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "21110e3321f952361f93f513e9d4e131") {
                                     this.props.navigation.navigate('Enigme6');
                                 }
                                 else {
-                                    alert(`la commande n'est pas bonne`);
+                                    alert(`la commande n'est pas bonne `);
                                 }
                                 this.setState({ commande: "" });
                             }}

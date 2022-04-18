@@ -77,7 +77,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
-                                if (this.state.commande == "BRAVO") {
+                                if (this.state.commande.toLowerCase().replace(/ /g, '') == "bravo") {
                                     this.props.navigation.navigate('Felicitation');
                                 }
                                 else {

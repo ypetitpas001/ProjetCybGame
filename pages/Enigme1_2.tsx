@@ -56,7 +56,7 @@ export default class Enigme2 extends React.Component<Enigme1_2Props> {
                                     this.props.navigation.navigate('Enigme2');
                                 }
                                 else {
-                                    alert(`la commande n'est pas bonne`);
+                                    alert(`Le mot de passe n'est pas correct`);
                                 }
                                 this.setState({ commande: "" });
                             }}

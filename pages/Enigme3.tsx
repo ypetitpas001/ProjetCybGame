@@ -88,13 +88,13 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
-                                if (this.state.commande == "nmap 127.0.0.1") {
+                                if (this.state.commande.toLowerCase() == "nmap 127.0.0.1") {
                                     this.ChargeIP();
                                 }
-                                else if (this.state.commande == "nmap 192.168.1.1 --script ssh-brute passdb=command.txt") {
+                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "nmap192.168.1.1--script ssh-brutepassdb=command.txt") {
                                     this.ChargeCommande();
                                 }
-                                else if (this.state.commande == "chdir") {
+                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "chdir") {
                                     this.props.navigation.navigate('Enigme4');
                                 }
                                 else {

@@ -57,11 +57,11 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                                     this.props.navigation.navigate('Enigme2');
                                 }
                                 else if (this.state.commande == "Ender") {
-                                    this.props.navigation.navigate('Enigme6');
+                                    this.props.navigation.navigate('Enigme5');
                                 }
 
                                 else {
-                                    alert(`la commande n'est pas bonne`);
+                                    alert(`Le mot de passe n'est pas correct`);
                                 }
                                 this.setState({ commande: "" });
                             }}
