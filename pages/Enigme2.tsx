@@ -73,7 +73,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                                 if (this.state.commande.toLowerCase().replace(/ /g, '') == "pannecapteur") {
                                     this.props.navigation.navigate('Enigme3');
                                 }
-                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "unescape(70%61%6E%6E%65%63%61%70%74%65%75%72)") {
+                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "unescape(70%61%6e%6e%65%63%61%70%74%65%75%72)") {
                                     alert(`mot de passe : pannecapteur`);
                                 }
                                 else {
@@ -107,7 +107,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                             {"\n"}
                             {"\n"}
                         </Text>
-                        <Text style={{ ...Styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
+                        <Text selectable={true} style={{ ...Styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             unescape('le message à decoder')
                             {"\n"}
                             {"\n"}

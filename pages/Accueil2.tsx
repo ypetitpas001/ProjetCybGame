@@ -17,7 +17,7 @@ export default function Accueil2(props: Accueil2Props) {
 
             <View>
                 <Text style={Styles.texte1}>Maintenant que tu connais le contexte, il s'agit de passer à l'action !</Text>
-                <Text style={Styles.texte2}>Tu vas devoir recueillir des informations importantes pour débloquer la situation</Text>
+                <Text style={Styles.texte2}>Tu vas devoir recueillir des informations importantes pour débloquer la situation.</Text>
                 <Text style={Styles.texte3}>Tu auras accès au tableau de bord du vaisseau. Une console sera également à ta disposition lorsque tu devras entrer des lignes de commandes.
                     N'hésite pas à me solliciter si tu as besoin d'aide !</Text>
             </View>

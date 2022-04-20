@@ -25,8 +25,8 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
 
                     <View>
-                        <Text style={Styles.enigme}>Félicitation</Text>
-                        <Text style={Styles.texte1}>Bravo grâce à toi les astronautes ont pu se poser sur Mars sans encombre. Mais les hackers n'ont pas dit leur dernier mot, dans le prochaine chapitre l'expédition sur Mars risque d'être tourmentée.</Text>
+                        <Text style={Styles.enigme}>Félicitations</Text>
+                        <Text style={Styles.texte1}>Bravo grâce à toi les astronautes ont pu se poser sur Mars sans encombre. Mais les hackers n'ont pas dit leur dernier mot, dans le prochain chapitre l'expédition sur Mars risque d'être tourmentée.</Text>
                         <Text style={{ ...Styles.texte2, ...{ alignSelf: "center" } }}>Merci d'avoir joué !</Text>
                     </View>
                     <View>

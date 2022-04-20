@@ -123,7 +123,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             Le hash correspondant aux valeurs actuelles t'es donné mais pour pouvoir modifier les valeurs il faut que tu le décodes. Mais juste avant il faut comprendre comment fonctionne un hash.
                             {"\n"}
                             {"\n"}
-                            Dans les bases de données les mots de passe sont stockées sous forme de chaine de caractères incompréhensibles afin d'éviter des hacks. Le mot de passe avant d'être stocké est transformé est "haché" avec un certain algorithme. Il en existe plusieurs et ici on va utiliser le "md5sum".
+                            Dans les bases de données les mots de passe sont stockés sous forme de chaine de caractères incompréhensibles afin d'éviter des hacks. Le mot de passe avant d'être stocké est transformé, on dit "haché", avec un certain algorithme. Il en existe plusieurs et ici on va utiliser le "md5sum".
                             {"\n"}
                             {"\n"}
                         </Text>

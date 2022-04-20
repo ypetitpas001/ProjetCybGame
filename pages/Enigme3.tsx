@@ -91,7 +91,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                                 if (this.state.commande.toLowerCase() == "nmap 127.0.0.1") {
                                     this.ChargeIP();
                                 }
-                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "nmap192.168.1.1--script ssh-brutepassdb=command.txt") {
+                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "nmap192.168.1.1--scriptssh-brutepassdb=command.txt") {
                                     this.ChargeCommande();
                                 }
                                 else if (this.state.commande.toLowerCase().replace(/ /g, '') == "chdir") {
@@ -117,7 +117,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                     <View onLayout={(view) => this.aideViewInfo = view}>
                         <Text style={{ ...Styles.aide, ...{ marginTop: 50, display: this.state.aide ? 'flex' : 'none', } }}>
                             Pour cette enigme une liste de commande t'es proposée
-                            mais tu ne vas les essayer une par une pour dans le but de trouver la bonne (ou peut-être que si)
+                            mais tu ne vas pas les essayer une par une pour trouver la bonne (ou peut-être que si)
                             {"\n"}
                             {"\n"}
                             Sinon tu peux automatiser le processus pour tester les commandes les unes après les autres
@@ -138,7 +138,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             jusqu'à ce que la bonne soit trouvée
                             {"\n"}
                             {"\n"}
-                            Il faut que tu renseigne l'adresse IP du serveur sur lequel tu vas entrer ces commandes et pour cela
+                            Il faut que tu renseignes l'adresse IP du serveur sur lequel tu vas entrer ces commandes et pour cela
                             tu peux utiliser cette commande qui va te permettre de trouver toutes les adresses détéctées sur le serveur
                             {"\n"}
                             {"\n"}

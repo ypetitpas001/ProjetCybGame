@@ -89,10 +89,10 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
-                                if (this.state.commande.toLowerCase().replace(/ /g, '') == "1; ls") {
+                                if (this.state.commande.toLowerCase().replace(/ /g, '') == "1;ls") {
                                     this.ChargeFichier();
                                 }
-                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "1;cat valeurs.txt") {
+                                else if (this.state.commande.toLowerCase().replace(/ /g, '') == "1;catvaleurs.txt") {
                                     this.ChargeCommande();
                                 }
                                 else if (this.state.commande.toLowerCase().replace(/ /g, '') == "455.2") {

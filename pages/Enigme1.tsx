@@ -34,7 +34,7 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                 <ScrollView ref={(ref => this.scrollViewRef = ref)}>
                     <View>
                         <Text style={Styles.enigme}>Enigme 1</Text>
-                        <Text style={Styles.texte1}>Tu vas devoir recueillir des informations importantes pour débloquer la situation, tu peux interagir avec les éléments en cliquant dessus</Text>
+                        <Text style={Styles.texte1}>Tu vas devoir recueillir des informations importantes pour débloquer la situation, tu peux interagir avec les éléments en cliquant dessus.</Text>
                         <Text style={Styles.texte2}>Voici le tableau de bord</Text>
                         <TouchableHighlight onPress={() => this.props.navigation.navigate('Enigme1_2')}>
                             <Image
@@ -57,7 +57,7 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                                     this.props.navigation.navigate('Enigme2');
                                 }
                                 else if (this.state.commande == "Ender") {
-                                    this.props.navigation.navigate('Enigme5');
+                                    this.props.navigation.navigate('Enigme6');
                                 }
 
                                 else {

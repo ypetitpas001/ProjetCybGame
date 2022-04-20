@@ -35,7 +35,7 @@ export default class Enigme2 extends React.Component<Enigme1_2Props> {
                 <ScrollView ref={(ref => this.scrollViewRef = ref)}>
                     <View>
                         <Text style={Styles.enigme}>Enigme 1</Text>
-                        <Text style={Styles.texte1}>Pour pouvoir actionner des boutons du tableau de bord il faut que tu te connecte en mode administrateur, voici les informations dont tu disposes pour trouver le mot de passe</Text>
+                        <Text style={Styles.texte1}>Pour pouvoir actionner des boutons du tableau de bord il faut que tu te connectes en mode administrateur, voici les informations dont tu disposes pour trouver le mot de passe</Text>
                         <Text style={Styles.texte2}>ID card :</Text>
                         <Image
                             style={styles.carte}
