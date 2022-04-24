@@ -57,7 +57,7 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                                     this.props.navigation.navigate('Enigme2');
                                 }
                                 else if (this.state.commande == "Ender") {
-                                    this.props.navigation.navigate('Enigme6');
+                                    this.props.navigation.navigate('Enigme4');
                                 }
 
                                 else {
@@ -78,7 +78,7 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                         </TouchableOpacity>
                     </View>
                     <View onLayout={(view) => this.aideViewInfo = view}>
-                        {/* <Collapsible collapsed={this.state.aide} style={styles.collapse}> */}
+
                         <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             Pour valider les enigmes il faut que tu trouves un mot de passe et le rentre dans la console.
                             {"\n"}
@@ -98,7 +98,6 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                             {"\n"}
                             {"\n"}
                         </Text>
-                        {/* </Collapsible> */}
 
                     </View>
 

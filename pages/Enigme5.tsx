@@ -27,21 +27,10 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         }
     }
 
-    ChargeFichier = () => {
-        if (this.state.valeurs) {
-            this.setState({ valeurs: false });
-        }
-        else {
-            this.setState({ valeurs: true });
-        }
-    }
-
-    ChargeCommande = () => {
-        if (this.state.hash) {
-            this.setState({ hash: false });
-        }
-        else {
-            this.setState({ hash: true });
+    AfficheRes = (param:string) => {
+        switch (param) {
+            case "valeurs" : this.setState({fichier:!this.state.valeurs});break;
+            case "hash" : this.setState({com:!this.state.hash});break;
         }
     }
 
@@ -90,10 +79,10 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
                                 if (this.state.commande.toLowerCase().replace(/ /g, '') == "reversemd5e3d182270702a605bd4054c922b66b87") {
-                                    this.ChargeFichier();
+                                    this.AfficheRes("valeurs");
                                 }
                                 else if (this.state.commande.toLowerCase().replace(/ /g, '') == "md5sum1500:250") {
-                                    this.ChargeCommande();
+                                    this.AfficheRes("hash");
                                 }
                                 else if (this.state.commande.toLowerCase().replace(/ /g, '') == "21110e3321f952361f93f513e9d4e131") {
                                     this.props.navigation.navigate('Enigme6');

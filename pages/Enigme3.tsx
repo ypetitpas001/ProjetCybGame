@@ -27,21 +27,10 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         }
     }
 
-    ChargeIP = () => {
-        if (this.state.IP) {
-            this.setState({ IP: false });
-        }
-        else {
-            this.setState({ IP: true });
-        }
-    }
-
-    ChargeCommande = () => {
-        if (this.state.com) {
-            this.setState({ com: false });
-        }
-        else {
-            this.setState({ com: true });
+    AfficheRes = (param:string) => {
+        switch (param) {
+            case "IP" : this.setState({fichier:!this.state.IP});break;
+            case "com" : this.setState({com:!this.state.com});break;
         }
     }
 
@@ -89,10 +78,10 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
                                 if (this.state.commande.toLowerCase() == "nmap 127.0.0.1") {
-                                    this.ChargeIP();
+                                    this.AfficheRes("IP");
                                 }
                                 else if (this.state.commande.toLowerCase().replace(/ /g, '') == "nmap192.168.1.1--scriptssh-brutepassdb=command.txt") {
-                                    this.ChargeCommande();
+                                    this.AfficheRes("com");
                                 }
                                 else if (this.state.commande.toLowerCase().replace(/ /g, '') == "chdir") {
                                     this.props.navigation.navigate('Enigme4');

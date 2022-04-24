@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight, ScrollView } from 'react-native';
+import {Text, View, TouchableOpacity, Image, TextInput, TouchableHighlight, ScrollView } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
 import { LayoutChangeEvent } from 'react-native';
@@ -26,12 +26,9 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
         }
     }
 
-    ChargeMessage = () => {
-        if (this.state.message) {
-            this.setState({ message: false });
-        }
-        else {
-            this.setState({ message: true });
+    AfficheRes = (param:string) => {
+        switch (param) {
+            case "message" : this.setState({fichier:!this.state.message});break;
         }
     }
 
@@ -48,7 +45,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                         <Text style={Styles.enigme}>Enigme 2</Text>
                         <Text style={Styles.texte1}>Bien joué ! tu as désormais accès au tableau de bord, il semblerait qu'il y ait un bouton qui clignote en rouge.</Text>
                         <Text style={Styles.texte2}>le tableau de bord</Text>
-                        <TouchableHighlight onPress={() => this.ChargeMessage()}>
+                        <TouchableHighlight onPress={() => this.AfficheRes("message")}>
                             <Image
                                 style={Styles.tableaudebord}
                                 source={require("../assets/SpaceJF_Red.png")}

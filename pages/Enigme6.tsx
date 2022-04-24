@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Animated, ScrollView, Image, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Animated, ScrollView, Image, } from 'react-native';
 import { LayoutChangeEvent } from 'react-native';
 import React from 'react';
 import Head from '../components/head';
@@ -15,7 +15,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
     resValeurs: null | LayoutChangeEvent = null;
     solHash: null | LayoutChangeEvent = null;
     scrollViewRef: null | ScrollView = null;
-    state: { aide: boolean, valeurs: boolean, commande: string } = { aide: false, valeurs: false, commande: "" }
+    state: { aide: boolean, commande: string } = { aide: false, commande: "" }
     scale = new Animated.Value(1);
 
     ChangeEtat = () => {
@@ -26,15 +26,6 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         else {
             this.setState({ aide: true });
             this.scrollViewRef?.scrollTo({ y: (this.aideViewInfo?.nativeEvent as any).pageY })
-        }
-    }
-
-    ChargeFichier = () => {
-        if (this.state.valeurs) {
-            this.setState({ valeurs: false });
-        }
-        else {
-            this.setState({ valeurs: true });
         }
     }
 

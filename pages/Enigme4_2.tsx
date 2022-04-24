@@ -27,21 +27,10 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
         }
     }
 
-    ChargeFichier = () => {
-        if (this.state.fichier) {
-            this.setState({ fichier: false });
-        }
-        else {
-            this.setState({ fichier: true });
-        }
-    }
-
-    ChargeCommande = () => {
-        if (this.state.com) {
-            this.setState({ com: false });
-        }
-        else {
-            this.setState({ com: true });
+    AfficheRes = (param:string) => {
+        switch (param) {
+            case "fichier" : this.setState({fichier:!this.state.fichier});break;
+            case "com" : this.setState({com:!this.state.com});break;
         }
     }
 
@@ -85,10 +74,10 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             onChangeText={(value) => this.setState({ commande: value })}
                             onSubmitEditing={() => {
                                 if (this.state.commande.toLowerCase().replace(/ /g, '') == "1;ls") {
-                                    this.ChargeFichier();
+                                    this.AfficheRes("fichier");
                                 }
                                 else if (this.state.commande.toLowerCase().replace(/ /g, '') == "1;catvaleurs.txt") {
-                                    this.ChargeCommande();
+                                    this.AfficheRes("com");
                                 }
                                 else if (this.state.commande.toLowerCase().replace(/ /g, '') == "455.2") {
                                     this.props.navigation.navigate('Enigme5');
