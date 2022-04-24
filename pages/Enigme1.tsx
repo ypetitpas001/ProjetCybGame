@@ -56,8 +56,8 @@ export default class Enigme1 extends React.Component<Enigme1Props> {
                                 if (this.state.commande == "Henry85*") {
                                     this.props.navigation.navigate('Enigme2');
                                 }
-                                else if (this.state.commande == "Ender") {
-                                    this.props.navigation.navigate('Enigme4');
+                                else if (this.state.commande == "JF-8801") {
+                                    this.props.navigation.navigate('Enigme5');
                                 }
 
                                 else {
