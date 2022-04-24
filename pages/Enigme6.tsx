@@ -93,6 +93,9 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                             Observe bien et n'hesite pas à zoomer :)
                             {"\n"}
                             {"\n"}
+                            Le but de cette énigme s'inspire de la stéganographie qui est une forme de dissimulation d'information dans le but de transmettre
+                            un message de manière inaperçue. Dans la réalité le message se trouve dans les méta données de l'image mais ici 
+                            il y a juste besoin de parcourir l'image afin de trouver le message caché.
                         </Text>
                     </View>
 
