@@ -28,7 +28,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
 
     AfficheRes = (param:string) => {
         switch (param) {
-            case "message" : this.setState({fichier:!this.state.message});break;
+            case "message" : this.setState({message:!this.state.message});break;
         }
     }
 

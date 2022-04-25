@@ -29,8 +29,8 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
     AfficheRes = (param:string) => {
         switch (param) {
-            case "valeurs" : this.setState({fichier:!this.state.valeurs});break;
-            case "hash" : this.setState({com:!this.state.hash});break;
+            case "valeurs" : this.setState({valeurs:!this.state.valeurs});break;
+            case "hash" : this.setState({hash:!this.state.hash});break;
         }
     }
 

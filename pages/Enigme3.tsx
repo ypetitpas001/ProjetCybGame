@@ -29,7 +29,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
     AfficheRes = (param:string) => {
         switch (param) {
-            case "IP" : this.setState({fichier:!this.state.IP});break;
+            case "IP" : this.setState({IP:!this.state.IP});break;
             case "com" : this.setState({com:!this.state.com});break;
         }
     }
