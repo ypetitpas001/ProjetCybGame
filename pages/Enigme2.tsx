@@ -13,7 +13,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
     aideViewInfo: null | LayoutChangeEvent = null;
     messageViewInfo: null | LayoutChangeEvent = null;
     scrollViewRef: null | ScrollView = null;
-    state: { aide: boolean, message: boolean, commande: string } = { aide: false, message: false, commande: "" }
+    state: { aide: boolean, panne : boolean,message: boolean, commande: string } = { aide: false,panne: false, message: false, commande: "" }
 
     ChangeEtat = () => {
         if (this.state.aide) {
@@ -29,6 +29,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
     AfficheRes = (param:string) => {
         switch (param) {
             case "message" : this.setState({message:!this.state.message});break;
+            case "panne" : this.setState({panne:!this.state.panne});break;
         }
     }
 
@@ -58,6 +59,10 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                         <Text selectable={true} style={{ fontSize: 14, color: "lightgreen", marginTop: 15, display: this.state.message ? 'flex' : 'none', }}>
                             70%61%6E%6E%65%63%61%70%74%65%75%72</Text>
                     </View>
+                    <View onLayout={(test) => this.messageViewInfo = test}>
+                        <Text selectable={true} style={{ fontSize: 14, color: "lightgreen", marginTop: 15, display: this.state.panne ? 'flex' : 'none', }}>
+                            Mot de passe : pannecapteur</Text>
+                    </View>
 
                     <View>
                         <TextInput
@@ -71,7 +76,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                                     this.props.navigation.navigate('Enigme3');
                                 }
                                 else if (this.state.commande.toLowerCase().replace(/ /g, '') == "unescape(70%61%6e%6e%65%63%61%70%74%65%75%72)") {
-                                    alert(`mot de passe : pannecapteur`);
+                                    this.AfficheRes("panne");
                                 }
                                 else {
                                     alert(`la commande n'est pas bonne`);
