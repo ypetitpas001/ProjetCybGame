@@ -59,7 +59,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
 
                     <View style={{ marginTop: 14, }}>
-                        <Text selectable={true} style={Styles.ip} >e3d182270702a605bd4054c922b66b87</Text>
+                        <Text selectable={true} style={Styles.ip} >hash : e3d182270702a605bd4054c922b66b87</Text>
                     </View>
 
                     <View onLayout={(test) => this.resValeurs = test} style={{ marginTop: 14, flexDirection: "row", display: this.state.valeurs ? 'flex' : 'none', }}>
@@ -67,7 +67,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                     </View>
 
                     <View onLayout={(test) => this.solHash = test} style={{ marginTop: 14, flexDirection: "row", display: this.state.hash ? 'flex' : 'none', }}>
-                        <Text selectable={true} style={Styles.ip} >21110e3321f952361f93f513e9d4e131</Text>
+                        <Text selectable={true} style={Styles.ip} >Mot de passe : 21110e3321f952361f93f513e9d4e131</Text>
                     </View>
 
                     <View>

@@ -66,7 +66,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                     </View>
 
                     <View onLayout={(test) => this.comViewInfo = test} style={{ marginTop: 14, flexDirection: "row", display: this.state.com ? 'flex' : 'none', }}>
-                        <Text selectable={true} style={Styles.ip} >chdir</Text>
+                        <Text selectable={true} style={Styles.ip} >Mot de passe : chdir</Text>
                     </View>
 
                     <View>
