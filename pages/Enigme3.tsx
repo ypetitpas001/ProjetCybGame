@@ -138,7 +138,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                         <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             {"\n"}
                             {"\n"}
-                            A noter que dans les cas d'usages réels cela peut prendre beaucoup de temps puisque les mots de passes comportent beaucoup de caractères
+                            A noter que dans les cas d'usages réels cela peut prendre beaucoup de temps puisque les mots de passe comportent beaucoup de caractères
                             {"\n"}
                             {"\n"}
                         </Text>

@@ -118,10 +118,10 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                         <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             {"\n"}
                             {"\n"}
-                            Cette commande va te permettre d'afficher tout ce qui est en lien avec le numéro. Par exemple : 3; ls va afficher tous les fichiers relatifs à la puissance du vaisseau.
+                            Cette commande va te permettre d'afficher tout ce qui est en lien avec le numéro. Par exemple : 3;ls va afficher tous les fichiers relatifs à la puissance du vaisseau.
                             {"\n"}
                             {"\n"}
-                            Ensuite il va falloir lire le contenu du fichier pour trouver les informations dont tu as besoin, la commande suivante permet de lire n'importe quel fichier dans une base de données
+                            Ensuite il va falloir lire le contenu du fichier pour trouver les informations dont tu as besoin, la commande suivante permet de lire n'importe quel fichier dans une base de données.
                             {"\n"}
                             {"\n"}
                         </Text>
@@ -131,7 +131,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                         <Text style={{ ...Styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             {"\n"}
                             {"\n"}
-                            Par exemple : 3; cat fichier.txt va lire le contenu du fichier "fichier.txt".
+                            Par exemple : 3;cat fichier.txt va lire le contenu du fichier "fichier.txt".
                             {"\n"}
                             {"\n"}
                         </Text>

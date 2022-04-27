@@ -43,7 +43,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
 
                     <View>
                         <Text style={styles.enigme}>Enigme 4</Text>
-                        <Text style={styles.texte1}>Parfait tu as trouvé la bonne commande, le vaisseau suit actuellement la bonne trajectoire. Il va falloir que tu assistes les astronautes dans leur phase d'atterrissage. Pour t'aider le bouton de gauche te permet d'effectuer une rotation permettant au vaisseau de bien se positionner pour atterrir.</Text>
+                        <Text style={styles.texte1}>Parfait tu as trouvé la bonne commande, le vaisseau suit actuellement la bonne trajectoire. Il va falloir que tu assistes les astronautes dans leur phase d'atterrissage. Pour t'aider le bouton de gauche te permet d'effectuer une rotation pour que le vaisseau se positionne bien pour atterrir.</Text>
                         <Text style={styles.texte2}>Le tableau de bord :</Text>
                     </View>
                     <View>
@@ -120,10 +120,10 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                         <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             {"\n"}
                             {"\n"}
-                            Cette commande va te permettre d'afficher tout ce qui est en lien avec le numéro. Par exemple : 3; ls va afficher tous les fichiers relatifs à la puissance du vaisseau.
+                            Cette commande va te permettre d'afficher tout ce qui est en lien avec le numéro. Par exemple : 3;ls va afficher tous les fichiers relatifs à la puissance du vaisseau.
                             {"\n"}
                             {"\n"}
-                            Ensuite il va falloir lire le contenu du fichier pour trouver les informations dont tu as besoin, la commande suivante permet de lire n'importe quel fichier dans une base de données
+                            Ensuite il va falloir lire le contenu du fichier pour trouver les informations dont tu as besoin, la commande suivante permet de lire n'importe quel fichier dans une base de données.
                             {"\n"}
                             {"\n"}
                         </Text>
@@ -133,7 +133,7 @@ export default class Enigme3 extends React.Component<Enigme3Props> {
                         <Text style={{ ...styles.aide, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
                             {"\n"}
                             {"\n"}
-                            Par exemple : 3; cat fichier.txt va lire le contenu du fichier "fichier.txt".
+                            Par exemple : 3;cat fichier.txt va lire le contenu du fichier "fichier.txt".
                             {"\n"}
                             {"\n"}
                         </Text>

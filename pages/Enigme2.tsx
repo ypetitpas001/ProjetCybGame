@@ -101,7 +101,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                             {"\n"}
                             {"\n"}
                             Il existe plusieurs façon de décoder des messages mais ici tu peux remarquer que chaque nombre est entrecoupé
-                            de pourcentages (%) les nombres correspondent à des valeurs hexadécimales.
+                            de pourcentages (%), les nombres correspondent à des valeurs hexadécimales.
                             {"\n"}
                             {"\n"}
                             Pour décoder le message, tu peux
@@ -110,7 +110,7 @@ export default class Enigme2 extends React.Component<Enigme2Props> {
                             {"\n"}
                         </Text>
                         <Text selectable={true} style={{ ...Styles.aideCom, ...{ display: this.state.aide ? 'flex' : 'none', } }}>
-                            unescape('le message à decoder')
+                            unescape("le message à decoder")
                             {"\n"}
                             {"\n"}
                         </Text>
